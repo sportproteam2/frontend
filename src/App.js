@@ -2,13 +2,13 @@ import React from "react";
 import {Fragment} from "react";
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
-import Rating from "./components/Rating"
-import Federation from "./components/Federation"
-import Main from "./components/Main"
-import Competition from "./components/Competition"
-import News from "./components/News"
-import AboutUs from "./components/AboutUs"
-import Contact from "./components/Contact"
+import Rating from "./views/Rating"
+import Federation from "./views/Federation"
+import Main from "./views/Main"
+import Competition from "./views/Competition"
+import News from "./views/News"
+import AboutUs from "./views/AboutUs"
+import Contact from "./views/Contact"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 function App() {
