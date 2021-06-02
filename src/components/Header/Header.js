@@ -9,6 +9,8 @@ import logo from '../../assets/img/logo_light.png'
 import headerMenuData from "../../assets/data/HeaderMenuData";
 import SearchIcon from '@material-ui/icons/Search';
 const useStyles = makeStyles(styles);
+
+
 function Header(){
     const classes = useStyles();
     const headerMenuTab = headerMenuData.map( link => <ListItem className={classes.listItem}><Link to={link.path}>{link.title}</Link></ListItem>);
@@ -21,7 +23,7 @@ function Header(){
                             <img src={logo} alt="logo" className={classes.appBar_logo}/>
                         </Col>
                         <Col sm={9} className={classes.appBar_menu}>
-                            <Row >
+                            <Row>
                                 <Col sm={9} >
                                     <List className={classes.list}>
                                         {headerMenuTab}
