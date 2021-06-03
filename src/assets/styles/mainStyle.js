@@ -50,6 +50,24 @@ const mainStyle = {
     },
     news_text_additional: {
         fontSize: '14px'
+    },
+    about_wrapper: {
+        marginTop: '10%',
+        marginBottom: '10%',
+        marginRight: '5%',
+        marginLeft: '5%'
+    },
+    about_title: {
+        color: '#ED2840',
+        fontSize: '56px',
+        fontWeight: '800',
+        lineHeight: '67px',
+        textTransform: 'uppercase'
+    },
+    about_text: {
+        fontSize: '20px',
+        fontWeight: '400',
+        lineHeight: '34px'
     }
 }
 export default mainStyle
