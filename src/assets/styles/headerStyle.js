@@ -1,4 +1,7 @@
 const headerStyle = {
+    header_light:{
+      background: 'white'
+    },
     appBar: {
         backgroundColor: 'transparent',
         borderBottom: 'solid 1px'

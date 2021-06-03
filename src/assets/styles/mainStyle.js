@@ -40,7 +40,15 @@ const mainStyle = {
         textAlign: 'Left',
         color: 'white',
         padding: '10px',
+        height:'150px',
         backgroundColor: '#ED2840'
+    },
+    news_hr: {
+        width: '30px',
+        height: '1px',
+        marginTop: '5px',
+        marginLeft: '0',
+        background: '#FFFFFF'
     },
     news_text_tag: {
         fontSize: '12px'

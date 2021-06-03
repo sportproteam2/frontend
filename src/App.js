@@ -10,25 +10,46 @@ import News from "./views/News"
 import AboutUs from "./views/AboutUs"
 import Contact from "./views/Contact"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import styles from "../src/assets/styles/headerStyle";
+import {makeStyles} from "@material-ui/core/styles";
+const useStyles = makeStyles(styles);
+class App extends React.Component{
+    state ={className:"" };
+    componentDidMount(){
+        window.addEventListener("scroll", this.handleScroll);
+    }
 
-function App() {
-    return (
-        <Fragment>
-            <BrowserRouter>
-                <Header/>
-                <Switch>
-                    <Route exact path="/" component={Main}/>
-                    <Route exact path="/rating" component={Rating}/>
-                    <Route exact path="/federations" component={Federation}/>
-                    <Route exact path="/competitions" component={Competition}/>
-                    <Route exact path="/news" component={News}/>
-                    <Route exact path="/about-us" component={AboutUs}/>
-                    <Route exact path="/contacts" component={Contact}/>
-                </Switch>
-                <Footer/>
-            </BrowserRouter>
-        </Fragment>
-    );
+    handleScroll=()=>{
+        if (window.pageYOffset > 0) {
+            if(!this.state.className){
+                this.setState({ className: "header_light" });
+            }
+        }else{
+            if(this.state.className){
+                this.setState({ className: "" });
+            }
+        }
+
+    }
+    render() {
+        return (
+            <Fragment>
+                <BrowserRouter>
+                    <Header ref={(r)=>this.ref=r} className={this.state.className}/>
+                    <Switch>
+                        <Route exact path="/" component={Main}/>
+                        <Route exact path="/rating" component={Rating}/>
+                        <Route exact path="/federations" component={Federation}/>
+                        <Route exact path="/competitions" component={Competition}/>
+                        <Route exact path="/news" component={News}/>
+                        <Route exact path="/about-us" component={AboutUs}/>
+                        <Route exact path="/contacts" component={Contact}/>
+                    </Switch>
+                    <Footer/>
+                </BrowserRouter>
+            </Fragment>
+        )
+    }
 }
 
 export default App;

@@ -13,12 +13,13 @@ function News(){
             <div className={classes.news_item}>
                 <Row>
                     <Col xs={5}>
-                        <img src={n.imgPath} alt={n.tag} width={150}/>
+                        <img src={n.imgPath} alt={n.tag} width={150} height={150}/>
                     </Col>
                     <Col xs={7} className={classes.news_text_wrapper}>
                         <p className={classes.news_text_tag}>{n.tag}</p>
                         <p className={classes.news_text_title}>{n.title}</p>
-                       <p className={classes.news_text_additional}>Подробнее</p>
+                        <p className={classes.news_text_additional}>Подробнее<hr className={classes.news_hr}/>
+                        </p>
                     </Col>
                 </Row>
             </div>
