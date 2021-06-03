@@ -1,6 +1,6 @@
 import aboutUs from "../img/aboutUs.png"
 
-const aboutUsStyles = {
+const aboutUsStyle = {
     about_photo_section: {
         backgroundImage: 'url(' + aboutUs + ')',
         height: '822px',
@@ -35,4 +35,4 @@ const aboutUsStyles = {
         textAlign: 'left'
     }
 }
-export default aboutUsStyles;
+export default aboutUsStyle;
