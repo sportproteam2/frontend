@@ -1,6 +1,6 @@
 const headerStyle = {
     appBar: {
-        backgroundColor: 'gray',
+        backgroundColor: 'transparent',
         borderBottom: 'solid 1px'
     },
     appBar_container : {

@@ -13,7 +13,7 @@ const useStyles = makeStyles(styles);
 
 function Header(){
     const classes = useStyles();
-    const headerMenuTab = headerMenuData.map( link => <ListItem className={classes.listItem}><Link to={link.path}>{link.title}</Link></ListItem>);
+    const headerMenuTab = headerMenuData.map( link => <ListItem key={link.id} className={classes.listItem}><Link to={link.path}>{link.title}</Link></ListItem>);
     return (
         <nav>
             <AppBar position="fixed" className={classes.appBar}>
