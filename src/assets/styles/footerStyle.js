@@ -8,7 +8,7 @@ const footerStyle = {
         padding: '3%'
     },
     footer_logo: {
-        paddingTop: "8%",
+        paddingTop: '8%',
         width: '117',
         height: '72'
     },
@@ -29,6 +29,10 @@ const footerStyle = {
         fontSize: '20px',
         lineHeight: '25px',
         textTransform: 'uppercase'
+    },
+    footer_column_anchor: {
+        textDecoration: 'none',
+        color: 'white'
     },
     footer_column_text: {
         color: 'white',

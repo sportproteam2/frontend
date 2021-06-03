@@ -12,7 +12,6 @@ function Main() {
             <About/>
             <AllFederations/>
         </div>
-
     )
 }
 export default Main;

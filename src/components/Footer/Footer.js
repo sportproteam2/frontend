@@ -16,8 +16,10 @@ const useStyles = makeStyles(styles);
 
 function Footer() {
     const classes = useStyles();
-    const headerMenuTab = headerMenuData.map(link => <ListItem className={classes.footer_column_text}><Link
-        to={link.path}>{link.title}</Link></ListItem>);
+    const headerMenuTab = headerMenuData.map(link =>
+        <ListItem className={classes.footer_column_text}>
+            <Link to={link.path} className={classes.footer_column_anchor}>{link.title}</Link>
+        </ListItem>);
     return (
         <footer className={classes.footer_wrapper}>
             <Container>

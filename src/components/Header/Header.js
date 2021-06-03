@@ -10,10 +10,12 @@ import headerMenuData from "../../assets/data/HeaderMenuData";
 import SearchIcon from '@material-ui/icons/Search';
 const useStyles = makeStyles(styles);
 
-
 function Header(){
     const classes = useStyles();
-    const headerMenuTab = headerMenuData.map( link => <ListItem key={link.id} className={classes.listItem}><Link to={link.path}>{link.title}</Link></ListItem>);
+    const headerMenuTab = headerMenuData.map( link =>
+        <ListItem key={link.id} className={classes.listItem}>
+            <Link to={link.path} className={classes.listItem_anchor}>{link.title}</Link>
+        </ListItem>);
     return (
         <nav>
             <AppBar position="fixed" className={classes.appBar}>
