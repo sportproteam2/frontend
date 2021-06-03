@@ -8,7 +8,7 @@ const mainStyle = {
         textAlign: 'left'
     },
     carousel: {
-      width: '100%'
+        width: '100%'
     },
     carouselControlPrev: {
         display: 'none'
@@ -68,6 +68,54 @@ const mainStyle = {
         fontSize: '20px',
         fontWeight: '400',
         lineHeight: '34px'
+    },
+    all_sports_wrapper: {
+        width: '100%',
+        textAlign: 'left',
+        display: 'flex',
+        flexDirection: 'column',
+        marginRight: '5%',
+        marginLeft: '5%'
+    },
+    all_sports_general_title: {
+        fontSize: '36px',
+        fontWeight: '800',
+        lineHeight: '44px'
+    },
+    all_sports_title: {
+        color: '#ED2840',
+        fontSize: '56px',
+        fontWeight: '900',
+        lineHeight: '68px',
+        marginTop: '3%'
+    },
+    all_sports_card_wrapper: {
+
+    },
+    all_sports_card: {
+        marginRight: '3%',
+        marginTop: '5%',
+        width: '200px',
+        height: '282px',
+        display: 'flex',
+        flexDirection: 'column'
+    },
+    all_sports_card_text_wrapper: {
+        textAlign: 'left',
+        paddingLeft: '5%',
+        paddingRight: '5%'
+    },
+    all_sports_card_text_title: {
+        paddingTop: '10px',
+        fontSize: '18px',
+        fontWeight: '800',
+        lineHeight: '22px'
+    },
+    all_sports_card_text_desc: {
+        fontSize: '14px',
+        fontWeight: '400',
+        lineHeight: '17px'
     }
+
 }
 export default mainStyle
