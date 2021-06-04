@@ -1,8 +1,8 @@
 import React from "react";
-import Banner from "./LandingPage/Sections/Banner";
-import News from "./LandingPage/Sections/News";
-import About from "./LandingPage/Sections/About";
-import AllFederations from "./LandingPage/Sections/AllFederations";
+import Banner from "./LandingPage/Banner";
+import News from "./LandingPage/News";
+import About from "./LandingPage/About";
+import AllFederations from "./LandingPage/AllFederations";
 
 function Main() {
     return (

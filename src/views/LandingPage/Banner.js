@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
-import competitionsData from "../../../assets/data/CompetitonsData";
-import style from "../../../assets/styles/mainStyle";
+import competitionsData from "../../assets/data/CompetitonsData";
+import style from "../../assets/styles/mainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import Button from 'react-bootstrap/Button'
 

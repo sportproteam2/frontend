@@ -1,8 +1,8 @@
 import React from "react";
 import {Container, Row, Col} from 'react-bootstrap';
-import style from "../../../assets/styles/mainStyle";
+import style from "../../assets/styles/mainStyle";
 import {makeStyles} from "@material-ui/core/styles";
-import federationsData from "../../../assets/data/FederationsData";
+import federationsData from "../../assets/data/FederationsData";
 
 const allSports = makeStyles(style);
 

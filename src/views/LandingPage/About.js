@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col} from 'react-bootstrap';
-import style from "../../../assets/styles/mainStyle";
+import style from "../../assets/styles/mainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 const mainStyle = makeStyles(style);
 

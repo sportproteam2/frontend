@@ -1,6 +1,6 @@
 import React from "react";
-import newsData from"../../../assets/data/NewsData";
-import style from "../../../assets/styles/mainStyle";
+import newsData from "../../assets/data/NewsData";
+import style from "../../assets/styles/mainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import { Container, Row, Col} from 'react-bootstrap';
 
@@ -8,7 +8,7 @@ const mainStyle = makeStyles(style);
 
 function News(){
     const classes = mainStyle();
-    const news = newsData.map((n) => {
+    const news = newsData.slice(0, 3).map((n) => {
         return (
             <div className={classes.news_item}>
                 <Row>
