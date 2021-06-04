@@ -3,6 +3,7 @@ import newsData from "../../assets/data/NewsData";
 import style from "../../assets/styles/mainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import { Container, Row, Col} from 'react-bootstrap';
+import {Link} from "react-router-dom";
 
 const mainStyle = makeStyles(style);
 
@@ -18,7 +19,10 @@ function News(){
                     <Col xs={7} className={classes.news_text_wrapper}>
                         <p className={classes.news_text_tag}>{n.tag}</p>
                         <p className={classes.news_text_title}>{n.title}</p>
-                        <p className={classes.news_text_additional}>Подробнее<hr className={classes.news_hr}/>
+                        <p className={classes.news_text_additional}>
+                            <Link to={'/newsItem/1'} className={classes.news_text_anchor}>
+                                Подробнее<hr className={classes.news_hr}/>
+                            </Link>
                         </p>
                     </Col>
                 </Row>

@@ -71,7 +71,10 @@ const NewsStyle = {
         fontSize: '18px',
         fontWeight: '600',
         lineHeight: '22px',
-        textTransform: 'uppercase',
+        textTransform: 'uppercase'
+    },
+    news_data_text_anchor: {
+      textDecoration: 'none',
         color: '#ED2840'
     },
     news_item: {
@@ -143,6 +146,55 @@ const NewsStyle = {
         filter: 'drop-shadow(2px 3px 5px #848484)',
         color: '#848484',
         margin: '10px'
+    },
+    news_single_item_wrapper: {
+        marginLeft: '15%',
+        marginRight: '15%',
+        marginTop: '10%',
+        marginBottom: '10%',
+        display: 'flex',
+        alignItems: 'left',
+        justifyContent: 'center',
+        flexDirection: 'column'
+    },
+    news_single_item_title: {
+        fontSize: '42px',
+        fontStyle: 'normal',
+        fontWeight: '900',
+        lineHeight: '52px',
+        textAlign: 'left',
+        color: '#ED2840'
+    },
+    news_single_item_date: {
+        paddingTop: '20px',
+        fontSize: '16px',
+        fontStyle: 'normal',
+        fontWeight: '500',
+        lineHeight: '20px'
+    },
+    news_single_item_img: {
+        paddingTop: '20px',
+        width: '100%'
+    },
+    news_single_item_desc: {
+        fontSize: '18px',
+        fontStyle: 'normal',
+        fontWeight: '400',
+        lineHeight: '30px',
+        paddingTop: '30px',
+        paddingBottom: '30px',
+        width: '100%'
+    },
+    news_single_item_anchor: {
+        textDecoration: 'none',
+        color: 'black'
+    },
+    news_single_item_additional: {
+        fontSize: '18px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        lineHeight: '22px',
+        textDecoration: 'underline'
     }
 }
 

@@ -59,6 +59,10 @@ const mainStyle = {
     news_text_additional: {
         fontSize: '14px'
     },
+    news_text_anchor: {
+        textDecoration: 'none',
+        color: 'white'
+    },
     about_wrapper: {
         marginTop: '10%',
         marginBottom: '10%',

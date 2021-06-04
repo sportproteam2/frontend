@@ -10,6 +10,7 @@ import News from "./views/News"
 import AboutUs from "./views/AboutUs"
 import Contact from "./views/Contact"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
+import NewsDetailedItem from "./views/NewsPage/NewsDetailedItem";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Header/>
                 <Switch>
                     <Route exact path="/" component={Main}/>
+                    <Route exact path="/newsItem/1" component={NewsDetailedItem} />
                     <Route exact path="/rating" component={Rating}/>
                     <Route exact path="/federations" component={Federation}/>
                     <Route exact path="/competitions" component={Competition}/>
