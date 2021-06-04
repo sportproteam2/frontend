@@ -88,7 +88,11 @@ const NewsStyle = {
     news_item_text_wrapper: {
         backgroundColor: '#FFFFFF',
         paddingLeft: '15px',
-        paddingTop: '15px'
+        paddingTop: '15px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'left',
+        justifyContent: 'space-between'
     },
     news_item_text_tag: {
         paddingLeft: '10px',
