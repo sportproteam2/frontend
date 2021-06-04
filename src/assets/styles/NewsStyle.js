@@ -133,6 +133,16 @@ const NewsStyle = {
         marginTop: '5px',
         marginLeft: '0',
         background: 'black'
+    },
+    news_pagination: {
+        display: 'flex',
+        justifyContent: 'center',
+        marginTop: '5%'
+    },
+    news_pagination_item: {
+        filter: 'drop-shadow(2px 3px 5px #848484)',
+        color: '#848484',
+        margin: '10px'
     }
 }
 

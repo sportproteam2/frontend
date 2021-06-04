@@ -4,11 +4,28 @@ import Form from "react-bootstrap/Form";
 import style from "../assets/styles/NewsStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import NewsItem from "./NewsPage/NewsItem";
+import PageItem from 'react-bootstrap/PageItem';
+import Pagination from 'react-bootstrap/Pagination';
 
 const newsStyle = makeStyles(style);
 
 function News() {
     const classes = newsStyle();
+    let active = 1;
+    let items = [];
+    for (let number = 1; number <= 3; number++) {
+        items.push(
+            <Pagination.Item key={number} active={number === active}>
+                {number}
+            </Pagination.Item>,
+        );
+    }
+
+    const paginationBasic = (
+        <div className={classes.news_pagination}>
+            <Pagination>{items}</Pagination>
+        </div>
+    );
     return (
         <Container className={classes.contact_wrapper}>
             <p className={classes.contact_title}>Новости</p>
@@ -42,6 +59,7 @@ function News() {
                 </Row>
             </Form>
             <NewsItem/>
+            {paginationBasic}
         </Container>
     )
 }
