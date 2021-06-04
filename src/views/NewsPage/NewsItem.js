@@ -15,12 +15,11 @@ function NewsItem() {
                 <div className={classes.news_item}>
                     <img src={n.imgPath} alt={n.tag} className={classes.news_item_img}/>
                     <div className={classes.news_item_text_wrapper}>
-                        <p className={classes.news_item_text_date}>{n.date}</p>
-                        <p className={classes.news_item_text_tag}>{n.federation}</p>
-                        <p className={classes.news_item_text_title}>{n.title}</p>
-                        <p className={classes.news_item_text_additional}>Подробнее
-                            <hr className={classes.news_hr}/>
+                        <p className={classes.news_item_text_date}>{n.date.slice(0,5)}
+                            <span className={classes.news_item_text_tag}>{n.federation}</span>
                         </p>
+                        <p className={classes.news_item_text_title}>{n.title}</p>
+                        <p className={classes.news_item_text_additional}>Подробнее</p>
                     </div>
                 </div>
             </Col>
@@ -29,20 +28,17 @@ function NewsItem() {
     return (
         <Row>
             <Col xs={12}>
-                <Row className={classes.news_global_item_wrapper}>
-                    <Col xs={7}>
-                        <img src={NewsData[0].imgPath} alt={NewsData[0].tag} width={600} height={380}/>
-                    </Col>
-                    <Col xs={5} className={classes.news_data_text}>
-                        <p className={classes.news_data_date}>{NewsData[0].date}</p>
-                        <p className={classes.news_data_sport_type}>{NewsData[0].federation}</p>
+                <div className={classes.news_global_item_wrapper}>
+                    <img src={process.env.PUBLIC_URL + '/news4.png'} alt={NewsData[0].tag} className={classes.news_data_item_img}/>
+                    <div className={classes.news_data_text}>
+                        <p className={classes.news_data_date}>{NewsData[0].date}
+                            <span className={classes.news_data_sport_type}>{NewsData[0].federation}</span>
+                        </p>
                         <p className={classes.news_data_sport_title}>{NewsData[0].title}</p>
                         <p className={classes.news_data_sport_desc}>{NewsData[0].desc}</p>
-                        <p className={classes.news_text_additional}>Подробнее
-                            <hr className={classes.news_hr}/>
-                        </p>
-                    </Col>
-                </Row>
+                        <p className={classes.news_data_text_additional}>Подробнее</p>
+                    </div>
+                </div>
                 <Row className={classes.news_items}>
                     {news}
                 </Row>

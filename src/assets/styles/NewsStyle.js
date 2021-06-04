@@ -21,30 +21,32 @@ const NewsStyle = {
     },
     news_data_text: {
         textAlign: 'Left',
-        paddingTop: '1%',
-        paddingLeft: '3%',
-        paddingBottom: '3%',
-        height: '350px'
+        paddingTop: '2%',
+        paddingLeft: '4%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'left'
     },
     news_data_date: {
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: '400',
         lineHeight: '20px',
-        textAlign: 'left'
+        textAlign: 'left',
+        color: '#898989'
     },
     news_data_sport_type: {
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: '700',
         lineHeight: '20px',
-        textAlign: 'left',
+        paddingLeft: '20px',
         color: '#ED2840'
     },
     news_data_sport_title: {
         fontSize: '32px',
         fontStyle: 'normal',
-        fontWeight: '600',
+        fontWeight: '800',
         lineHeight: '40px',
         textAlign: 'left'
     },
@@ -57,38 +59,53 @@ const NewsStyle = {
     },
     news_global_item_wrapper: {
         marginBottom: '7%',
-        marginTop: '7%'
-    },
-    news_items: {
+        marginTop: '7%',
+        display: 'flex',
 
+    },
+    news_data_item_img: {
+        width: '100%'
+    },
+    news_items: {},
+    news_data_text_additional: {
+        fontSize: '18px',
+        fontWeight: '600',
+        lineHeight: '22px',
+        textTransform: 'uppercase',
+        color: '#ED2840'
     },
     news_item: {
         marginBottom: '15px',
         marginTop: '15px',
-        display: 'flex'
+        display: 'flex',
+        border: '1px solid #E8E8E8',
+        boxSizing: 'border-box',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.04)'
     },
     news_item_img: {
         width: '100%'
     },
     news_item_text_wrapper: {
-        backgroundColor: '#F4F4F4',
+        backgroundColor: '#FFFFFF',
         paddingLeft: '15px',
         paddingTop: '15px'
     },
     news_item_text_tag: {
+        paddingLeft: '10px',
         fontSize: '14px',
         fontStyle: 'normal',
-        fontWeight: '700',
-        lineHeight: '10px',
+        fontWeight: '500',
+        lineHeight: '12px',
         textAlign: 'left',
         color: '#ED2840'
     },
     news_item_text_date: {
         fontSize: '12px',
         fontStyle: 'normal',
-        fontWeight: '400',
-        lineHeight: '10px',
-        textAlign: 'left'
+        fontWeight: '500',
+        lineHeight: '12px',
+        textAlign: 'left',
+        color: '#898989'
     },
     news_item_text_title: {
         fontSize: '16px',
@@ -98,12 +115,13 @@ const NewsStyle = {
         textAlign: 'left'
     },
     news_item_text_additional: {
-        fontSize: '14px',
+        fontSize: '12px',
         fontStyle: 'normal',
         fontWeight: '500',
-        lineHeight: '10px',
+        lineHeight: '12px',
         textAlign: 'left',
-        marginTop: '0'
+        marginTop: '0',
+        textTransform: 'uppercase'
     },
     news_hr: {
         width: '30px',
