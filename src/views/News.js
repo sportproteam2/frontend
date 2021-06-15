@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import style from "../assets/styles/NewsStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import NewsItem from "./NewsPage/NewsItem";
-import PageItem from 'react-bootstrap/PageItem';
 import Pagination from 'react-bootstrap/Pagination';
 
 const newsStyle = makeStyles(style);

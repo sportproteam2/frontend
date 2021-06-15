@@ -3,8 +3,13 @@ const headerStyle = {
         background: 'white'
     },
     appBar: {
-        backgroundColor: 'transparent',
+        backgroundColor: 'transparent !important',
         borderBottom: 'solid 1px'
+    },
+    appBar2: {
+        backgroundColor: 'white !important',
+        borderBottom: 'solid 1px',
+        color: 'black !important'
     },
     appBar_container: {
         display: 'flex',
@@ -46,6 +51,10 @@ const headerStyle = {
     listItem_anchor: {
         textDecoration: 'none',
         color: 'white'
+    },
+    listItem_anchor2: {
+        textDecoration: 'none',
+        color: 'black'
     },
     listItemText: {
         color: 'white',

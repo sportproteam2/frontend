@@ -1,7 +1,7 @@
 import React from "react";
 import style from "../assets/styles/ContactStyles";
 import {makeStyles} from "@material-ui/core/styles";
-import {Container, Row, Col} from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 
 const aboutUsStyle = makeStyles(style);

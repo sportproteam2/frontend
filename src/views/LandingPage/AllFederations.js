@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Row, Col} from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import style from "../../assets/styles/mainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import federationsData from "../../assets/data/FederationsData";
@@ -11,7 +11,7 @@ function AllFederations() {
     const fedData = federationsData.map(f => {
         return (
             <Col xs={2} className={classes.all_sports_card}>
-                <img src={f.imgPath} width={200} height={184}/>
+                <img src={f.imgPath} width={200} height={184} alt={f.id}/>
                 <div className={classes.all_sports_card_text_wrapper}>
                     <p className={classes.all_sports_card_text_title}>{f.title}</p>
                     <p className={classes.all_sports_card_text_desc}>{f.desc}</p>

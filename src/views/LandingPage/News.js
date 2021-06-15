@@ -2,7 +2,7 @@ import React from "react";
 import newsData from "../../assets/data/NewsData";
 import style from "../../assets/styles/mainStyle";
 import {makeStyles} from "@material-ui/core/styles";
-import { Container, Row, Col} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 
 const mainStyle = makeStyles(style);

@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 import styles from "../../assets/styles/headerStyle";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar"
-import { Container, Row, Col} from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import {List, ListItem} from '@material-ui/core';
 import logo from '../../assets/img/logo_light.png'
 import headerMenuData from "../../assets/data/HeaderMenuData";
@@ -12,13 +12,34 @@ const useStyles = makeStyles(styles);
 
 function Header(){
     const classes = useStyles();
+    const [header, setHeader] = useState(classes.appBar);
+    const [listItemAnchor, setListItemAnchor] = useState(classes.listItem_anchor);
+
+    const listenScrollEvent = (event) => {
+        if (window.scrollY < 70){
+            setListItemAnchor(classes.listItem_anchor);
+            setHeader(classes.appBar);
+        } else {
+            setListItemAnchor(classes.listItem_anchor2);
+            setHeader(classes.appBar2);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenScrollEvent);
+        return () =>
+            window.removeEventListener('scroll', listenScrollEvent);
+    }, []);
+
+
     const headerMenuTab = headerMenuData.map( link =>
         <ListItem key={link.id} className={classes.listItem}>
-            <Link to={link.path} className={classes.listItem_anchor}>{link.title}</Link>
+            <Link to={link.path} className={listItemAnchor}>{link.title}</Link>
         </ListItem>);
+
     return (
         <nav>
-            <AppBar position="fixed" className={classes.appBar}>
+            <AppBar position="fixed" className={header}>
                 <Container>
                     <Row className={classes.appBar_container}>
                         <Col sm={3} className={classes.appBar_logo_wrapper}>

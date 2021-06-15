@@ -1,8 +1,8 @@
 import React from "react";
 import NewsData from "../../assets/data/NewsData";
-import {Row, Col} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import style from "../../assets/styles/NewsStyle";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {makeStyles} from "@material-ui/core/styles";
 
 const newsStyle = makeStyles(style);

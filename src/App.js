@@ -1,5 +1,4 @@
-import React from "react";
-import {Fragment} from "react";
+import React, {Fragment} from "react";
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 import Rating from "./views/Rating"
@@ -12,7 +11,10 @@ import Contact from "./views/Contact"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import NewsDetailedItem from "./views/NewsPage/NewsDetailedItem";
 
+
 function App() {
+
+
     return (
         <Fragment>
             <BrowserRouter>

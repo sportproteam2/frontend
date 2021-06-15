@@ -1,7 +1,7 @@
 import React from "react";
 import style from "../assets/styles/aboutUsStyle";
 import {makeStyles} from "@material-ui/core/styles";
-import { Row, Col} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 
 const aboutUsStyle = makeStyles(style);
 
