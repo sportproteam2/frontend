@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
-import styles from "../../assets/styles/headerStyle";
+import styles from "../../assets/styles/HeaderStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar"
 import {Col, Container, Row} from 'react-bootstrap';

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "../assets/styles/aboutUsStyle";
+import style from "../assets/styles/AboutUsStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Row} from 'react-bootstrap';
 

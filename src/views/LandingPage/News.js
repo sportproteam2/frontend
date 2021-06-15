@@ -1,6 +1,6 @@
 import React from "react";
 import newsData from "../../assets/data/NewsData";
-import style from "../../assets/styles/mainStyle";
+import style from "../../assets/styles/MainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Row} from 'react-bootstrap';
 import {Link} from "react-router-dom";

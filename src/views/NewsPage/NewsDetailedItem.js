@@ -17,8 +17,7 @@ function NewsDetailedItem() {
             <img className={classes.news_single_item_img} src={NewsData[0].imgPath} alt={NewsData[0].id}/>
             <p className={classes.news_single_item_desc}>{NewsData[0].desc}</p>
             <p className={classes.news_single_item_additional}>
-                <Link to={'/news'} className={classes.news_single_item_anchor}>Вернуться назад
-                </Link>
+                <Link to={'/news'} className={classes.news_single_item_anchor}>Вернуться назад</Link>
             </p>
         </div>
     )

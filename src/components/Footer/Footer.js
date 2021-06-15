@@ -3,7 +3,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import {Col, Container, Row} from "react-bootstrap";
 import logo from "../../assets/img/logo_light.png";
 import {List, ListItem} from "@material-ui/core";
-import styles from "../../assets/styles/footerStyle";
+import styles from "../../assets/styles/FooterStyle";
 import headerMenuData from "../../assets/data/HeaderMenuData";
 import EmailIcon from '@material-ui/icons/Email';
 import RoomIcon from '@material-ui/icons/Room';
