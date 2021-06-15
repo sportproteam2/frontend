@@ -18,6 +18,14 @@ const ContactStyles = {
         fontWeight: '700',
         lineHeight: '32px',
         textAlign: 'left'
+    },
+    rating_text: {
+        fontSize: '18px',
+        fontStyle: 'normal',
+        fontWeight: '400',
+        lineHeight: '31px',
+        textAlign: 'left',
+        paddingTop: '15px'
     }
 }
 
