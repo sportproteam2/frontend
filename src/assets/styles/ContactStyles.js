@@ -1,8 +1,11 @@
 const ContactStyles = {
     contact_wrapper: {
-        paddingTop: '10%',
-        paddingLeft: '5%',
-        paddingRight: '5%'
+        paddingTop: '8%',
+        paddingLeft: '20%',
+        paddingRight: '20%'
+    },
+    rating_form: {
+        paddingTop: '3%'
     },
     contact_title: {
         color: '#ED2840',
@@ -19,13 +22,22 @@ const ContactStyles = {
         lineHeight: '32px',
         textAlign: 'left'
     },
+    rating_title: {
+        color: '#ED2840',
+        fontSize: '42px',
+        fontStyle: 'normal',
+        fontWeight: '900',
+        lineHeight: '51px',
+        textAlign: 'left',
+        paddingTop: '10%'
+    },
     rating_text: {
         fontSize: '18px',
         fontStyle: 'normal',
         fontWeight: '400',
         lineHeight: '31px',
         textAlign: 'left',
-        paddingTop: '15px'
+        paddingTop: '5%'
     }
 }
 
