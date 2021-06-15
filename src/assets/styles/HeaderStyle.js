@@ -63,7 +63,7 @@ const headerStyle = {
     navLink: {
         color: 'inherit',
         position: 'relative',
-        padding: '0.9375rem',
+        padding: '1rem',
         fontWeight: '400',
         fontSize: '12px',
         textTransform: 'uppercase',
