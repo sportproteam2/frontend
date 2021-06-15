@@ -15,7 +15,7 @@ function Header(){
     const [header, setHeader] = useState(classes.appBar);
     const [listItemAnchor, setListItemAnchor] = useState(classes.listItem_anchor);
 
-    const listenScrollEvent = (event) => {
+    const listenScrollEvent = () => {
         if (window.scrollY < 70){
             setListItemAnchor(classes.listItem_anchor);
             setHeader(classes.appBar);
