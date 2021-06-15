@@ -18,6 +18,8 @@ const ContactStyles = {
     contact_dropdown_label: {
         fontSize: '26px',
         fontStyle: 'normal',
+
+
         fontWeight: '700',
         lineHeight: '32px',
         textAlign: 'left'
