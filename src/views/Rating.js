@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import style from "../assets/styles/ContactStyles";
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Container, Row} from 'react-bootstrap';
@@ -6,7 +6,12 @@ import Form from 'react-bootstrap/Form';
 
 const aboutUsStyle = makeStyles(style);
 function Rating() {
-    const classes = aboutUsStyle();
+    const classes = aboutUsStyle();4
+    const [sportNames, setSportNames] = useState();
+    useEffect(() => {
+        fetch("https://sportproteam2.herokuapp.com/api/sport/").then(res => setSportNames(res.data))
+    })
+    const names = sportNames.map(n =>  <option>n</option>);
     return (
         <div className={classes.contact_wrapper}>
             <p className={classes.contact_title}>Рейтинг спорстменов Кыргызской Республики</p>
@@ -16,11 +21,8 @@ function Rating() {
                         <Form.Group controlId="exampleForm.ControlSelect1">
                             <Form.Label className={classes.contact_dropdown_label}>Выберите вид спорта</Form.Label>
                             <Form.Control as="select" size="lg">
-                                <option>Lorem ipsum</option>
-                                <option>Lorem ipsum</option>
-                                <option>Lorem ipsum</option>
-                                <option>Lorem ipsum</option>
-                                <option>Lorem ipsum</option>
+                                <option>Не выбрано</option>
+
                             </Form.Control>
                         </Form.Group>
                     </Col>
@@ -28,11 +30,8 @@ function Rating() {
                         <Form.Group controlId="exampleForm.ControlSelect1">
                             <Form.Label className={classes.contact_dropdown_label}>Олимпийские виды спорта</Form.Label>
                             <Form.Control as="select" size="lg">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                <option>Не выбрано</option>
+                                {names}
                             </Form.Control>
                         </Form.Group>
 

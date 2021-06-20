@@ -19,7 +19,7 @@ function App() {
             <BrowserRouter>
                 <Header/>
                 <Switch>
-                    <Route exact path="/" component={Main}/>
+                    <Route exact path="/" component={Federation}/>
                     <Route exact path="/newsItem/1" component={NewsDetailedItem} />
                     <Route exact path="/rating" component={Rating}/>
                     <Route exact path="/federations" component={Federation}/>

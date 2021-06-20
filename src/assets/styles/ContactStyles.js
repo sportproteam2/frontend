@@ -1,8 +1,8 @@
 const ContactStyles = {
     contact_wrapper: {
         paddingTop: '8%',
-        paddingLeft: '20%',
-        paddingRight: '20%'
+        paddingLeft: '10%',
+        paddingRight: '10%'
     },
     rating_form: {
         paddingTop: '3%'
