@@ -11,7 +11,6 @@ import Contact from "./views/Contact"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import NewsDetailedItem from "./views/NewsPage/NewsDetailedItem";
 
-
 function App() {
 
 
