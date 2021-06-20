@@ -12,8 +12,7 @@ const headerStyle = {
         color: 'black !important'
     },
     appBar_container: {
-        display: 'flex',
-        alignItems: 'center'
+        display: 'flex'
     },
     appBar_logo_wrapper: {
         display: 'flex',
@@ -21,11 +20,11 @@ const headerStyle = {
         alignItems: 'center'
     },
     appBar_logo: {
-        margin: '10px 10px 10px 0px',
+        margin: '9px 9px 9px 0px',
         width: '90px'
     },
     appBar_menu: {
-        height: 'auto',
+        maxHeight: 'inherit !important',
         borderLeft: 'solid 1px'
     },
     appBar_icon_wrapper: {
@@ -35,26 +34,33 @@ const headerStyle = {
     },
     list: {
         display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
+        justifyContent: 'space-evenly',
         fontSize: '14px',
-        margin: '0',
+        marginTop: '1px',
         listStyle: 'none',
         color: 'inherit'
     },
     listItem: {
         display: 'block',
         width: 'auto',
-        margin: '0',
-        padding: '0'
+        margin: '0'
     },
     listItem_anchor: {
-        textDecoration: 'none',
-        color: 'white'
+        paddingTop: '20px',
+        paddingBottom: '19px',
+        textDecoration: 'none !important',
+        color: 'white !important'
     },
     listItem_anchor2: {
-        textDecoration: 'none',
-        color: 'black'
+        paddingTop: '20px',
+        paddingBottom: '19px',
+        textDecoration: 'none !important',
+        color: 'black !important'
+    },
+    listItem_active: {
+        color: '#ED2840 !important',
+        borderBottom: 'solid 4px #ED2840',
+        textDecoration: 'none !important',
     },
     listItemText: {
         color: 'white',

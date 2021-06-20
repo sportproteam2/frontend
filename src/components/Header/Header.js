@@ -1,27 +1,31 @@
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import styles from "../../assets/styles/HeaderStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar"
 import {Col, Container, Row} from 'react-bootstrap';
 import {List, ListItem} from '@material-ui/core';
-import logo from '../../assets/img/logo_light.png'
+import logo1 from '../../assets/img/logo_light.png'
+import logo2 from '../../assets/img/logo.png'
 import headerMenuData from "../../assets/data/HeaderMenuData";
-import SearchIcon from '@material-ui/icons/Search';
 const useStyles = makeStyles(styles);
 
 function Header(){
     const classes = useStyles();
     const [header, setHeader] = useState(classes.appBar);
+    const [logo, setLogo] = useState(logo1);
     const [listItemAnchor, setListItemAnchor] = useState(classes.listItem_anchor);
+
 
     const listenScrollEvent = () => {
         if (window.scrollY < 70){
             setListItemAnchor(classes.listItem_anchor);
             setHeader(classes.appBar);
+            setLogo(logo1);
         } else {
             setListItemAnchor(classes.listItem_anchor2);
             setHeader(classes.appBar2);
+            setLogo(logo2);
         }
     }
 
@@ -34,7 +38,7 @@ function Header(){
 
     const headerMenuTab = headerMenuData.map( link =>
         <ListItem key={link.id} className={classes.listItem}>
-            <Link to={link.path} className={listItemAnchor}>{link.title}</Link>
+            <NavLink to={link.path} className={listItemAnchor} activeClassName={classes.listItem_active}>{link.title}</NavLink>
         </ListItem>);
 
     return (
@@ -45,17 +49,10 @@ function Header(){
                         <Col sm={3} className={classes.appBar_logo_wrapper}>
                             <img src={logo} alt="logo" className={classes.appBar_logo}/>
                         </Col>
-                        <Col sm={9} className={classes.appBar_menu}>
-                            <Row>
-                                <Col sm={9} >
-                                    <List className={classes.list}>
-                                        {headerMenuTab}
-                                    </List>
-                                </Col>
-                                <Col sm={3} className={classes.appBar_icon_wrapper}>
-                                    <SearchIcon/>
-                                </Col>
-                            </Row>
+                        <Col sm={8} className={classes.appBar_menu}>
+                             <List className={classes.list}>
+                                 {headerMenuTab}
+                             </List>
                         </Col>
                     </Row>
                 </Container>

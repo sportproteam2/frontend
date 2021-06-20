@@ -31,8 +31,8 @@ const footerStyle = {
         textTransform: 'uppercase'
     },
     footer_column_anchor: {
-        textDecoration: 'none',
-        color: 'white'
+        textDecoration: 'none !important',
+        color: 'white !important'
     },
     footer_column_text: {
         color: 'white',
