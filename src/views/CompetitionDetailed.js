@@ -12,11 +12,11 @@ const aboutUsStyle = makeStyles(style);
 function CompetitionDetailed() {
     const classes = aboutUsStyle();
     const [events, setSEvents] = useState(eventData);
-    // useEffect(() => {
-    //     fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
-    //         .then((response) => response.json())
-    //         .then(res => setSEvents(res));
-    // }, [])
+    useEffect(() => {
+        fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
+            .then((response) => response.json())
+            .then(res => setSEvents(res));
+    }, [])
     return (
         <div className={classes.contact_wrapper}>
             <p className={classes.contact_title}>{events[0].name}</p>
