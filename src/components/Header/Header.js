@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 import styles from "../../assets/styles/HeaderStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar"
@@ -17,7 +17,7 @@ function Header(){
     const [listItemAnchor, setListItemAnchor] = useState(classes.listItem_anchor);
 
 
-    const listenScrollEvent = () => {
+    const listenScrollEvent = (listenScrollEvent) => {
         if (window.scrollY < 70){
             setListItemAnchor(classes.listItem_anchor);
             setHeader(classes.appBar);
@@ -47,7 +47,9 @@ function Header(){
                 <Container>
                     <Row className={classes.appBar_container}>
                         <Col sm={3} className={classes.appBar_logo_wrapper}>
+                            <Link to="/">
                             <img src={logo} alt="logo" className={classes.appBar_logo}/>
+                            </Link>
                         </Col>
                         <Col sm={8} className={classes.appBar_menu}>
                              <List className={classes.list}>

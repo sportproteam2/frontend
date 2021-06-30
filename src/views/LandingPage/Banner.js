@@ -9,11 +9,13 @@ const mainStyle = makeStyles(style);
 function Banner(){
     const classes = mainStyle();
     const [bannerData, setBannerData] = useState(competitionsData)
-    useEffect(() => {
-        fetch("https://sportproteam2.herokuapp.com/api/event").then(
-            res => setBannerData(res.data)
-        )
-    })
+    // useEffect(() => {
+    //     fetch("https://sportproteam2.herokuapp.com/api/event")
+    //         .then((response) => response.json())
+    //         .then(res => setBannerData(res)
+    //     )
+    // }, [])
+    console.log("bannerData: " + bannerData)
     const carouselData = bannerData.map((c) => {
         return (<Carousel.Item interval={5000}>
             <img src={c.path} alt={c.id} className={classes.carousel_img}/>

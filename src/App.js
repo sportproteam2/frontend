@@ -10,6 +10,7 @@ import AboutUs from "./views/AboutUs"
 import Contact from "./views/Contact"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import NewsDetailedItem from "./views/NewsPage/NewsDetailedItem";
+import CompetitionDetailed from "./views/CompetitionDetailed";
 
 function App() {
 
@@ -19,8 +20,9 @@ function App() {
             <BrowserRouter>
                 <Header/>
                 <Switch>
-                    <Route exact path="/" component={Federation}/>
+                    <Route exact path="/" component={Main}/>
                     <Route exact path="/newsItem/1" component={NewsDetailedItem} />
+                    <Route exact path="/competitions/1" component={CompetitionDetailed} />
                     <Route exact path="/rating" component={Rating}/>
                     <Route exact path="/federations" component={Federation}/>
                     <Route exact path="/competitions" component={Competition}/>
