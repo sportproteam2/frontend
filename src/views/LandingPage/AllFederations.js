@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {Col, Container, Row} from 'react-bootstrap';
 import style from "../../assets/styles/MainStyle";
 import {makeStyles} from "@material-ui/core/styles";

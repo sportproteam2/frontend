@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Col, Row} from "react-bootstrap";
 import {makeStyles} from "@material-ui/core/styles";
 import style from "../assets/styles/AboutUsStyle";
+
 const aboutUsStyle = makeStyles(style);
 
 function Federation() {
