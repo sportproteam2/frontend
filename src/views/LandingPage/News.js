@@ -22,11 +22,11 @@ function News(){
         return (
             <div className={classes.news_item}>
                 <Row>
-                    <Col xs={5}>
+                    <Col xs={5} className={classes.photo_wrapper}>
                         <img src={n.photo} alt={n.tag} width={150} height={150}/>
                     </Col>
                     <Col xs={7} className={classes.news_text_wrapper}>
-                        <p className={classes.news_text_tag}>{n.tag}</p>
+                        <p className={classes.news_text_tag}>Последние новости</p>
                         <p className={classes.news_text_title}>{n.title}</p>
                         <p className={classes.news_text_additional}>
                             <Link to={'/newsItem/' + n.id} className={classes.news_text_anchor}>

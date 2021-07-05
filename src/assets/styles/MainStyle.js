@@ -36,6 +36,10 @@ const mainStyle = {
         marginBottom: '5%',
         marginRight: '50px'
     },
+    photo_wrapper: {
+        height: '150px',
+        width: 'max-content !important'
+    },
     news_text_wrapper: {
         textAlign: 'Left',
         color: 'white',
@@ -54,7 +58,9 @@ const mainStyle = {
         fontSize: '12px'
     },
     news_text_title: {
-        fontSize: '16px'
+        fontSize: '16px',
+        fontWeight: '600',
+        lineHeight: '23px'
     },
     news_text_additional: {
         fontSize: '14px'
