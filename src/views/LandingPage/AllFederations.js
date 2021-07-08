@@ -34,9 +34,6 @@ function AllFederations() {
             <p className={classes.all_sports_general_title}>Виды спорта</p>
             <Row className={classes.all_sports_card_wrapper}>
                 {
-                    // sportsData[0].forEach( x => {
-                    //     console.log("x", x);
-                    // })
                     sportsData.map((item) => {
                         return (
                             <div>
