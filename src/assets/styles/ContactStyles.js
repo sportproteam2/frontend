@@ -4,6 +4,7 @@ const ContactStyles = {
         paddingLeft: '10%',
         paddingRight: '10%'
     },
+    hidden: { display:'none' },
     rating_form: {
         paddingTop: '3%'
     },
