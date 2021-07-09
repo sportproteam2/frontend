@@ -12,7 +12,7 @@ function Competition() {
     const classes = aboutUsStyle();
     const [sportNames, setSportNames] = useState(federationsData);
     const [sportCategory, setSportCategory] = useState([]);
-    const [events, setSEvents] = useState(eventData);
+    const [events, setEvents] = useState(eventData);
     useEffect(() => {
         fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
             .then((response) => response.json())
@@ -20,9 +20,6 @@ function Competition() {
         fetch("https://sportproteam2.herokuapp.com/api/sport/1")
             .then((response) => response.json())
             .then(res => setSportCategory(res));
-        // fetch("https://sportproteam2.herokuapp.com/api/event")
-        //     .then((response) => response.json())
-        //     .then(res => setSEvents(res));
     }, [])
     return (
         <div className={classes.contact_wrapper}>
