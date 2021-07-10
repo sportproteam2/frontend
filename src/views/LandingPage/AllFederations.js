@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Container, Row} from 'react-bootstrap';
+import {Container, Col, Row} from 'react-bootstrap';
 import style from "../../assets/styles/MainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import axios from "axios";
@@ -12,16 +12,15 @@ function AllFederations() {
     const [sportsData, setSportsData] = useState([]);
 
     useEffect(async () => {
-        const res =await axios.get('https://sportproteam2.herokuapp.com/api/sportcategory/');
+        const res = await axios.get('https://sportproteam2.herokuapp.com/api/sportcategory/');
         setSportsCategoryNames(res.data);
         let data = [];
-        sportsCategoryNames.forEach(async x => {
-            const res =await axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + x.id);
-            data.push([{"categ": x.name}, {"sports": res.data}]);
-            console.log('data',data);
-            setSportsData(data);
-        });
-
+        for (const x of sportsCategoryNames) {
+            const res2 = await axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + x.id);
+            data.push([{"categ": x.name}, {"sports": res2.data}]);
+        }
+        setSportsData(data);
+        // console.log('sportsDatata', sportsData);
     }, [])
     return (
         <Container className={classes.all_sports_wrapper}>
@@ -31,22 +30,22 @@ function AllFederations() {
                     sportsData.map((item) => {
                         return (
                             <div>
-                                <p className={classes.all_sports_title}>{item.categ}</p>
+                                { (item[1].sports.length > 0) &&
+                                <p className={classes.all_sports_title}>{item[0].categ}</p>}
                                 <Row className={classes.all_sports_card_wrapper}>
-
-                                    {/*{item.sports.map((subitem, i) => {*/}
-                                    {/*        return (*/}
-                                    {/*            <Col xs={2} className={classes.all_sports_card}>*/}
-                                    {/*                <img src={subitem.imgPath} width={200} height={184}*/}
-                                    {/*                     alt={subitem.id}/>*/}
-                                    {/*                <div className={classes.all_sports_card_text_wrapper}>*/}
-                                    {/*                    <p className={classes.all_sports_card_text_title}>{subitem.title}</p>*/}
-                                    {/*                    <p className={classes.all_sports_card_text_desc}>{subitem.desc}</p>*/}
-                                    {/*                </div>*/}
-                                    {/*            </Col>*/}
-                                    {/*        )*/}
-                                    {/*    })*/}
-                                    {/*}*/}
+                                    {item[1].sports.map((subitem) => {
+                                        return (
+                                            <Col xs={4} className={classes.all_sports_card}>
+                                                <img src={subitem.imgPath} width={200} height={184}
+                                                     alt={subitem.id}/>
+                                                <div className={classes.all_sports_card_text_wrapper}>
+                                                    <p className={classes.all_sports_card_text_title}>{subitem.name}</p>
+                                                    <p className={classes.all_sports_card_text_desc}>subitem.shortDesc</p>
+                                                </div>
+                                            </Col>
+                                        )
+                                    })
+                                    }
                                 </Row>
                             </div>
                         )

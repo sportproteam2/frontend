@@ -36,9 +36,14 @@ const mainStyle = {
         marginBottom: '5%',
         marginRight: '50px'
     },
+    photo: {
+      height: '150px',
+        width: '100%'
+    },
     photo_wrapper: {
         height: '150px',
-        width: 'max-content !important'
+        padding: '0 !important',
+margin: '0 !important',
     },
     news_text_wrapper: {
         textAlign: 'Left',
@@ -71,21 +76,27 @@ const mainStyle = {
     },
     about_wrapper: {
         marginTop: '10%',
-        marginBottom: '10%',
+        marginBottom: '7%',
         marginRight: '5%',
         marginLeft: '5%'
     },
     about_title: {
         color: '#ED2840',
-        fontSize: '56px',
-        fontWeight: '800',
-        lineHeight: '67px',
-        textTransform: 'uppercase'
+        fontSize: '72px',
+        fontWeight: '700',
+        lineHeight: '106.7px',
+        letterSpacing: '2%',
+        textTransform: 'uppercase',
+        // paddingLeft: '5%',
+        paddingRight: '5%'
     },
     about_text: {
-        fontSize: '20px',
-        fontWeight: '400',
-        lineHeight: '34px'
+        paddingTop: '20px',
+        fontSize: '24px',
+        fontWeight: '500',
+        lineHeight: '41px',
+        fontFamily: 'Lato !important',
+        fontStyle: 'normal'
     },
     all_sports_wrapper: {
         width: '100%',
@@ -96,11 +107,13 @@ const mainStyle = {
         marginLeft: '5%'
     },
     all_sports_general_title: {
-        fontSize: '36px',
-        fontWeight: '800',
-        lineHeight: '44px'
+        fontSize: '50px',
+        fontWeight: '700',
+        lineHeight: '74px',
+        color: '#898989'
     },
     all_sports_title: {
+        paddingTop: '40px',
         color: '#ED2840',
         fontSize: '56px',
         fontWeight: '900',
@@ -109,6 +122,7 @@ const mainStyle = {
     },
     all_sports_card_wrapper: {
 
+        paddingLeft: '15px'
     },
     all_sports_card: {
         marginRight: '3%',
@@ -116,7 +130,8 @@ const mainStyle = {
         width: '200px',
         height: '282px',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.04)'
     },
     all_sports_card_text_wrapper: {
         textAlign: 'left',
