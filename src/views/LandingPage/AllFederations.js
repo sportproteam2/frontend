@@ -20,7 +20,7 @@ function AllFederations() {
             data.push([{"categ": x.name}, {"sports": res2.data}]);
         }
         setSportsData(data);
-        // console.log('sportsDatata', sportsData);
+        console.log('sportsDatata', sportsData);
     }, [])
     return (
         <Container className={classes.all_sports_wrapper}>

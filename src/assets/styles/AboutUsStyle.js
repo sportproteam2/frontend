@@ -33,6 +33,14 @@ const aboutUsStyle = {
         fontWeight: '400',
         lineHeight: '31px',
         textAlign: 'left'
+    },
+    about_desc_title: {
+        paddingTop: '40px',
+        paddingBottom: '30px',
+        fontSize: '42px',
+        fontWeight: '700',
+        lineHeight: '62px',
+        color: '#ED2840'
     }
 }
 export default aboutUsStyle;
