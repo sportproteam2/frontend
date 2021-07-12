@@ -5,12 +5,12 @@ const footerStyle = {
         bottom: 0
     },
     footer_content_wrapper: {
-        padding: '3%'
+        paddingTop: '3%',
+        paddingBottom: '3%'
     },
     footer_logo: {
         paddingTop: '8%',
-        width: '117',
-        height: '72'
+        width: '50%'
     },
     footer_menu_wrapper: {
         display: 'flex',
