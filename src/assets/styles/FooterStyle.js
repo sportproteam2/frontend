@@ -1,6 +1,6 @@
 const footerStyle = {
     footer_wrapper: {
-        backgroundColor: 'black',
+        backgroundColor: '#020712',
         marginTop:'calc(5% + 40px)',
         bottom: 0
     },
