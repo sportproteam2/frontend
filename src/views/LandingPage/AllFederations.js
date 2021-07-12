@@ -20,7 +20,7 @@ function AllFederations() {
             data.push([{"categ": x.name}, {"sports": res2.data}]);
         }
         setSportsData(data);
-        console.log('sportsDatata', sportsData);
+        // console.log('sportsDatata', sportsData);
     }, [])
     return (
         <Container className={classes.all_sports_wrapper}>
@@ -36,11 +36,11 @@ function AllFederations() {
                                     {item[1].sports.map((subitem) => {
                                         return (
                                             <Col xs={4} className={classes.all_sports_card}>
-                                                <img src={subitem.imgPath} width={200} height={184}
+                                                <img src={subitem.photo} width={200} height={184}
                                                      alt={subitem.id}/>
                                                 <div className={classes.all_sports_card_text_wrapper}>
                                                     <p className={classes.all_sports_card_text_title}>{subitem.name}</p>
-                                                    <p className={classes.all_sports_card_text_desc}>subitem.shortDesc</p>
+                                                    <p className={classes.all_sports_card_text_desc}>{subitem.short_desc}</p>
                                                 </div>
                                             </Col>
                                         )

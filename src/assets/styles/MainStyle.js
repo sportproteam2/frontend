@@ -38,7 +38,7 @@ const mainStyle = {
     },
     photo: {
       height: '150px',
-        width: '100%'
+        // width: '100% !important'
     },
     photo_wrapper: {
         height: '150px',
@@ -71,7 +71,7 @@ margin: '0 !important',
         fontSize: '14px'
     },
     news_text_anchor: {
-        textDecoration: 'none',
+        textDecoration: 'none !important',
         color: 'white'
     },
     about_wrapper: {
