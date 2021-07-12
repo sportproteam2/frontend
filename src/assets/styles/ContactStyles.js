@@ -14,7 +14,8 @@ const ContactStyles = {
         fontStyle: 'normal',
         fontWeight: '900',
         lineHeight: '51px',
-        textAlign: 'left'
+        textAlign: 'left',
+        paddingBottom: '5%'
     },
     contact_dropdown_label: {
         fontSize: '26px',
@@ -41,7 +42,15 @@ const ContactStyles = {
         lineHeight: '31px',
         textAlign: 'left',
         paddingTop: '5%'
-    }
+    },
+    about_desc_title: {
+        paddingTop: '70px',
+        paddingBottom: '30px',
+        fontSize: '42px',
+        fontWeight: '700',
+        lineHeight: '62px',
+        color: '#ED2840'
+    },
 }
 
 export default ContactStyles;

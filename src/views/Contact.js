@@ -73,7 +73,8 @@ function Contact() {
                         { (selectedSport !== '') &&
                         <p className={classes.contact_dropdown_label}>
                             {selectedSport}
-                        </p>}
+                        </p>
+                        }
                     </Col>}
                 </Row>
             </Form>

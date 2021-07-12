@@ -54,6 +54,10 @@ const CompetitionStyle = {
         lineHeight: '51px',
         textAlign: 'left'
     },
+    form: {
+      paddingTop: '5%',
+      paddingBottom: '5%'
+    },
     table_wrapper: {
       marginTop: '5%',
       marginBottom: '5%'
