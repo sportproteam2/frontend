@@ -86,7 +86,6 @@ function Competition() {
                     return (
                             <Col xs={3} className={classes.card_wrapper}>
                                 <img src={e.imgPath} alt={e.id} />
-
                                 <div className={classes.card_text_wrapper}>
                                     <p className={classes.card_text_title}>{e.name}</p>
                                     <p className={classes.card_text_desc}>{e.startDate} {e.endDate}</p>

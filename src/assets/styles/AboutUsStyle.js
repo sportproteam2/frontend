@@ -148,6 +148,46 @@ const aboutUsStyle = {
         justifyContent: 'space-between',
         alignContent: 'center'
     },
+    gallery_photo_wrapper: {
+        display: 'flex',
+        flexDirection: 'column',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+    },
+    gallery_img: {
+        height: '500px',
+    },
+    card_text_wrapper: {
+        textAlign: 'left',
+        paddingTop: '3%',
+        paddingBottom: '3%',
+    },
+    card_tag: {
+        fontSize: '18px',
+        fontStyle: 'normal',
+        fontWeight: '600',
+        lineHeight: '21px',
+        textAlign: 'left',
+        fontFamily: 'Lato !important, sans-serif',
+        color: '#ED2840'
+    },
+    card_main_text: {
+        fontSize: '26px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        lineHeight: '38px',
+        textAlign: 'left',
+        color: 'white'
+    },
+    card_date: {
+        fontSize: '16px',
+        fontStyle: 'normal',
+        fontWeight: '500',
+        lineHeight: '19px',
+        textAlign: 'left',
+        fontFamily: 'Lato !important, sans-serif',
+        color: 'white'
+    },
     news_item: {
         marginBottom: '15px',
         marginTop: '15px',
