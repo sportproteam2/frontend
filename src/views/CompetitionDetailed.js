@@ -11,16 +11,16 @@ const aboutUsStyle = makeStyles(style);
 
 function CompetitionDetailed() {
     const classes = aboutUsStyle();
-    const [events, setSEvents] = useState(eventData);
+    const [events, setSEvents] = useState([]);
     useEffect(() => {
-        fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
+        fetch("https://sportproteam2.herokuapp.com/api/event/")
             .then((response) => response.json())
             .then(res => setSEvents(res));
     }, [])
     return (
         <div className={classes.contact_wrapper}>
-            <p className={classes.contact_title}>{events[0].name}</p>
-            <p className={classes.date_desc}>{events[0].startDate} {events[0].endDate}</p>
+            {/*<p className={classes.contact_title}>{events[0].name}</p>*/}
+            {/*<p className={classes.date_desc}>{events[0].date.slice(0,10)}</p>*/}
 
             <Tabs defaultActiveKey="profile">
                 <Tab eventKey="regalement" title="Регламент">
@@ -95,7 +95,7 @@ function CompetitionDetailed() {
                             <Row>
                                 <Col xs={6}>
                                     <p className={classes.event_info_text_title}>Программа соревнований</p>
-                                    <p>{events[0].startDate}</p>
+                                    {/*<p>{events[0].date}</p>*/}
                                     <p>Взвешивание и мандатная комиссия с 09:00 до 22:00</p>
                                     <br/>
                                     <p className={classes.event_info_text_title}>Адрес</p>
@@ -181,11 +181,137 @@ function CompetitionDetailed() {
                     </Table>
 
                 </Tab>
+                <Tab eventKey="players" title="Участники">
+                    <Row>
+                        <Col  xs={2} >
+                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Взрослые</p>
+                                    <hr className={classes.hr}/>
+                                    <p>1976-2002</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col  xs={2} >
+                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Взрослые</p>
+                                    <hr className={classes.hr}/>
+                                    <p>1976-2002</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col  xs={2} >
+                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Взрослые</p>
+                                    <hr className={classes.hr}/>
+                                    <p>1976-2002</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col  xs={2} >
+                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Взрослые</p>
+                                    <hr className={classes.hr}/>
+                                    <p>1976-2002</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col  xs={2} >
+                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Взрослые</p>
+                                    <hr className={classes.hr}/>
+                                    <p>1976-2002</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col  xs={2} >
+                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Взрослые</p>
+                                    <hr className={classes.hr}/>
+                                    <p>1976-2002</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs={10} className={classes.categories_wrapper}>
+                            <p className={classes.title}>Мужчин: 19</p>
+                            <Row>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p>7 атлетов</p>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col xs={10} className={classes.categories_wrapper}>
+                            <p className={classes.title}>Женщин: 19</p>
+                            <Row>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p>7 атлетов</p>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+
+                    </Row>
+                </Tab>
                 <Tab eventKey="setka" title="Сетки">
                 </Tab>
                 <Tab eventKey="result" title="Результаты">
                 </Tab>
             </Tabs>
+
 
 
         </div>

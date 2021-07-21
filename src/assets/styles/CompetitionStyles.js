@@ -4,6 +4,38 @@ const CompetitionStyle = {
         paddingLeft: '10%',
         paddingRight: '10%'
     },
+    card_img: {
+        paddingTop: '12px'
+    },
+    group_card_wrapper: {
+        height: "100px",
+        width: "auto",
+        color: "#ED2840 !important"
+    },
+    categories_wrapper: {
+        paddingTop: '30px'
+    },
+    title: {
+        fontSize: '28px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        lineHeight: '41px',
+        letterSpacing: '0.01em',
+        textAlign: 'left'
+
+    },
+    cards_wrapper: {
+        padding: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        border: '1px solid',
+
+    },
+    news_main_card_wrapper: {
+        marginTop: '20px',
+        height: "150px",
+        color: "#ED2840 !important"
+    },
     card_wrapper: {
         display: 'flex',
         flexDirection: 'column',
@@ -11,21 +43,37 @@ const CompetitionStyle = {
         background: '#FFFFFF',
         boxShadow: '0px 6px 20px rgba(0, 0, 0, 0.1)'
     },
-     card_text_wrapper: {
+    card_text_wrapper: {
         textAlign: 'left',
         paddingLeft: '5%',
         paddingRight: '5%'
     },
-     card_text_title: {
+    card_text_title: {
         paddingTop: '10px',
         fontSize: '20px',
         fontWeight: '600',
         lineHeight: '29px'
     },
-     card_text_desc: {
+    card_text_desc: {
         fontSize: '14px',
         fontWeight: '400',
         lineHeight: '17px'
+    },
+    news_main_card_text_wrapper: {
+        position: 'absolute',
+        bottom: '5%',
+        left: '10%'
+    }, news_main_card_text: {
+        fontSize: '24px',
+        fontWeight: '600',
+        lineHeight: '35px'
+    },
+    hr: {
+        marginLeft: '7%',
+        marginTop: '0',
+        height: '3px',
+        width: '40px',
+        color: '#ED2840 !important'
     },
     card_status: {
         color: '#ED2840',
@@ -55,18 +103,18 @@ const CompetitionStyle = {
         textAlign: 'left'
     },
     form: {
-      paddingTop: '5%',
-      paddingBottom: '5%'
+        paddingTop: '5%',
+        paddingBottom: '5%'
     },
     table_wrapper: {
-      marginTop: '5%',
-      marginBottom: '5%'
+        marginTop: '5%',
+        marginBottom: '5%'
     },
     event_info: {
         padding: '5%',
         backgroundColor: 'rgba(229, 229, 229, 0.29)',
     },
-    event_info_text_title:{
+    event_info_text_title: {
         fontSize: '20px',
         fontStyle: 'normal',
         fontWeight: '500',
