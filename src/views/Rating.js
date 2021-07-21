@@ -25,8 +25,6 @@ function Rating() {
 
     function selectFirstForm(event) {
         setSelectedCatId(event.target.value);
-        // console.log("selectedCatId", selectedCatId);
-        // console.log("selectedSportId", selectedSportId);
 
         fetch('https://sportproteam2.herokuapp.com/api/sportcategory/' + event.target.value)
             .then((response) => response.json())
@@ -65,10 +63,20 @@ function Rating() {
         </tr>)
     })
 
+    function submitSearch(event){
+        event.preventDefault();
+        fetch("https://sportproteam2.herokuapp.com/api/players/?name=" + event.target.value)
+            .then((response) => response.json())
+            .then(res => {
+                console.log("search", res)
+                setPlayers(res)
+            });
+    }
+
     return (
         <div className={classes.contact_wrapper}>
             <p className={classes.contact_title}>Рейтинг спорстменов Кыргызской Республики</p>
-            <Form>
+            <Form >
                 <Row>
                     <Col xs={6}>
                         <Form.Group controlId="exampleForm.ControlSelect1">
@@ -121,7 +129,7 @@ function Rating() {
                         :
                         <Col xs={12}>
                             <p className={classes.about_desc_title}>Рейтинги спортсменов</p>
-                            <Form>
+                            <Form onSubmit={ event => submitSearch(event)}>
                                 <Form.Row>
                                     <Col>
                                         <Form.Group as={Col} controlId="formGridName">

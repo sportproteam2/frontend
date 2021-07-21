@@ -1,8 +1,8 @@
 const NewsStyle = {
     contact_wrapper: {
         paddingTop: '10%',
-        paddingLeft: '5%',
-        paddingRight: '5%'
+        paddingLeft: '10%',
+        paddingRight: '10%'
     },
     contact_title: {
         color: '#ED2840',
@@ -10,7 +10,9 @@ const NewsStyle = {
         fontStyle: 'normal',
         fontWeight: '900',
         lineHeight: '51px',
-        textAlign: 'left'
+        textAlign: 'left',
+        paddingBottom: '30px',
+        textTransform: 'uppercase'
     },
     contact_dropdown_label: {
         fontSize: '26px',
@@ -25,7 +27,8 @@ const NewsStyle = {
         paddingLeft: '4%',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'left'
+        alignItems: 'left',
+        justifyContent: 'space-between'
     },
     news_data_date: {
         fontSize: '16px',
@@ -64,7 +67,7 @@ const NewsStyle = {
 
     },
     news_data_item_img: {
-        width: '100%'
+        height: '400px'
     },
     news_items: {},
     news_data_text_additional: {
@@ -86,7 +89,7 @@ const NewsStyle = {
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.04)'
     },
     news_item_img: {
-        width: '100%'
+        height: '150px'
     },
     news_item_text_wrapper: {
         backgroundColor: '#FFFFFF',

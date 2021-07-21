@@ -37,7 +37,7 @@ const mainStyle = {
         marginRight: '50px'
     },
     photo: {
-      height: '150px',
+      height: '200px',
         // width: '100% !important'
     },
     photo_wrapper: {

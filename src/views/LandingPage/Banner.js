@@ -3,7 +3,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import competitionsData from "../../assets/data/CompetitonsData";
 import style from "../../assets/styles/MainStyle";
 import {makeStyles} from "@material-ui/core/styles";
-import Button from 'react-bootstrap/Button'
 
 const mainStyle = makeStyles(style);
 function Banner(){

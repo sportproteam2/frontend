@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import style from "../assets/styles/ContactStyles";
 import {makeStyles} from "@material-ui/core/styles";
-import {Col, Container, Row} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import federationsData from "../assets/data/FederationsData";
 
@@ -49,7 +49,7 @@ function Contact() {
         }
 
         //findFederationBySport
-        fetch("https://sportproteam2.herokuapp.com/api/federation/?sport=" + event.target.value)
+        fetch("https://sportproteam2.herokuapp.com/api/federation/?sport=" + selectedSportId)
             .then((response) => response.json())
             .then(res => setSelectedSport(res));
 
@@ -83,10 +83,10 @@ function Contact() {
                         </Form.Group>
                     </Col>
                     }
-                    {(selectedSportId !== 0) &&
+                    {(selectedSport !== 0) &&
                     <Col xs={8} className={classes.contacts_info_wrapper}>
                         <p className={classes.contact_title}>Contacts</p>
-                        {/*<p className={classes.contact_title}>{selectedSport.contacts}</p>*/}
+                        <p>{selectedSport[0].contacts}</p>
                     </Col>
                     }
 

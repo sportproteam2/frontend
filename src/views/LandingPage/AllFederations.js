@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Container, Col, Row} from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import style from "../../assets/styles/MainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import axios from "axios";
@@ -16,7 +16,7 @@ function AllFederations() {
         setSportsCategoryNames(res.data);
         let data = [];
         for (const x of sportsCategoryNames) {
-            const res2 = await axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + x.id);
+            const res2 = axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + x.id);
             data.push([{"categ": x.name}, {"sports": res2.data}]);
         }
         setSportsData(data);
