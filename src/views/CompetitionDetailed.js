@@ -183,8 +183,9 @@ function CompetitionDetailed() {
                 </Tab>
                 <Tab eventKey="players" title="Участники">
                     <Row>
-                        <Col  xs={2} >
-                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper}
+                                 style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
                                 <div className={classes.news_main_card_text_wrapper}>
                                     <p className={classes.news_main_card_text}>Взрослые</p>
                                     <hr className={classes.hr}/>
@@ -192,8 +193,9 @@ function CompetitionDetailed() {
                                 </div>
                             </div>
                         </Col>
-                        <Col  xs={2} >
-                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper}
+                                 style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
                                 <div className={classes.news_main_card_text_wrapper}>
                                     <p className={classes.news_main_card_text}>Взрослые</p>
                                     <hr className={classes.hr}/>
@@ -201,8 +203,9 @@ function CompetitionDetailed() {
                                 </div>
                             </div>
                         </Col>
-                        <Col  xs={2} >
-                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper}
+                                 style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
                                 <div className={classes.news_main_card_text_wrapper}>
                                     <p className={classes.news_main_card_text}>Взрослые</p>
                                     <hr className={classes.hr}/>
@@ -210,8 +213,9 @@ function CompetitionDetailed() {
                                 </div>
                             </div>
                         </Col>
-                        <Col  xs={2} >
-                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper}
+                                 style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
                                 <div className={classes.news_main_card_text_wrapper}>
                                     <p className={classes.news_main_card_text}>Взрослые</p>
                                     <hr className={classes.hr}/>
@@ -219,8 +223,9 @@ function CompetitionDetailed() {
                                 </div>
                             </div>
                         </Col>
-                        <Col  xs={2} >
-                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper}
+                                 style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
                                 <div className={classes.news_main_card_text_wrapper}>
                                     <p className={classes.news_main_card_text}>Взрослые</p>
                                     <hr className={classes.hr}/>
@@ -228,8 +233,9 @@ function CompetitionDetailed() {
                                 </div>
                             </div>
                         </Col>
-                        <Col  xs={2} >
-                            <div className={classes.news_main_card_wrapper} style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper}
+                                 style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}>
                                 <div className={classes.news_main_card_text_wrapper}>
                                     <p className={classes.news_main_card_text}>Взрослые</p>
                                     <hr className={classes.hr}/>
@@ -309,9 +315,227 @@ function CompetitionDetailed() {
                 <Tab eventKey="setka" title="Сетки">
                 </Tab>
                 <Tab eventKey="result" title="Результаты">
+                    <Row>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper} style={{
+                                backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 20.83%, rgba(0, 0, 0, 0.761194) 57.29%, #000000 96.87%), url(/result1.png)`,
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover'
+                            }}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Взрослые</p>
+                                    <hr className={classes.hr}/>
+                                    <p className={classes.card_text_desc}>1976-2002</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper} style={{
+                                backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 20.83%, rgba(0, 0, 0, 0.761194) 57.29%, #000000 96.87%), url(/result2.png)`,
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover'
+                            }}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Юниоры</p>
+                                    <hr className={classes.hr}/>
+                                    <p className={classes.card_text_desc}>2003-2005</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper} style={{
+                                backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 20.83%, rgba(0, 0, 0, 0.761194) 57.29%, #000000 96.87%), url(/result3.png)`,
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover'
+                            }}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Кадеты</p>
+                                    <hr className={classes.hr}/>
+                                    <p className={classes.card_text_desc}>2006-2008</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper} style={{
+                                backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 20.83%, rgba(0, 0, 0, 0.761194) 57.29%, #000000 96.87%), url(/result4.png)`,
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover'
+                            }}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Дети 10-11 лет</p>
+                                    <hr className={classes.hr}/>
+                                    <p className={classes.card_text_desc}>2009-2010</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper} style={{
+                                backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 20.83%, rgba(0, 0, 0, 0.761194) 57.29%, #000000 96.87%), url(/result6.png)`,
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover'
+                            }}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Дети 8-9 лет</p>
+                                    <hr className={classes.hr}/>
+                                    <p className={classes.card_text_desc}>2011-2012</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs={2}>
+                            <div className={classes.news_main_card_wrapper} style={{
+                                backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 20.83%, rgba(0, 0, 0, 0.761194) 57.29%, #000000 96.87%), url(/result6.png)`,
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover'
+                            }}>
+                                <div className={classes.news_main_card_text_wrapper}>
+                                    <p className={classes.news_main_card_text}>Дети 6-7 лет</p>
+                                    <hr className={classes.hr}/>
+                                    <p className={classes.card_text_desc}>2013-2014</p>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col xs={10} className={classes.categories_wrapper}>
+                            <p className={classes.title}>Мужчин: 19</p>
+                            <Row>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p className={classes.card_text_bold}>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p className={classes.card_text_bold}>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p className={classes.card_text_bold}>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p className={classes.card_text_bold}>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p className={classes.card_text_bold}>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p className={classes.card_text_bold}>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p className={classes.card_text_bold}>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p className={classes.card_text_bold}>7 атлетов</p>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col xs={10} className={classes.categories_wrapper}>
+                            <p className={classes.title}>Женщин: 9</p>
+                            <Row>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p className={classes.card_text_bold}>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p className={classes.card_text_bold}>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p className={classes.card_text_bold}>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p className={classes.card_text_bold}>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p className={classes.card_text_bold}>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p className={classes.card_text_bold}>7 атлетов</p>
+                                    </div>
+                                </Col>
+                                <Col xs={2}>
+                                    <div className={classes.cards_wrapper}>
+                                        <p className={classes.card_text_bold}>до 58 кг</p>
+                                        <hr className={classes.hr}/>
+                                        <p className={classes.card_text_bold}>7 атлетов</p>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+
+                    </Row>
+                    <Row>
+                        <Col xs={12}>
+                            <div>
+                                <p className={classes.top_result_text}>Призеры -58 кг, 2002 года рождения</p>
+                                <Row>
+                                    <Col xs={3} className={classes.main_result_wrapper}>
+                                        <img src={'/resultTop.png'}/>
+                                        <p className={classes.main_result_text}>1 место</p>
+                                        <p>Акматов Азамат</p>
+                                    </Col>
+                                    <Col xs={3} className={classes.main_result_wrapper}>
+                                        <img src={'/resultTop.png'}/>
+                                        <p className={classes.main_result_text}>1 место</p>
+                                        <p>Акматов Азамат</p>
+                                    </Col>
+                                    <Col xs={3} className={classes.main_result_wrapper}>
+                                        <img src={'/resultTop.png'}/>
+                                        <p className={classes.main_result_text}>1 место</p>
+                                        <p>Акматов Азамат</p>
+                                    </Col>
+                                </Row>
+                                <p className={classes.top_result_text}>Результаты всех этапов меропрятия</p>
+                                <Table bordered hover className={classes.table_wrapper}>
+                                    <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>ФИО</th>
+                                        <th>Город</th>
+                                        <th>Организация</th>
+                                        <th>Баллы</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Акматов Азамат Шаршенович</td>
+                                        <td>Бишкек</td>
+                                        <td>Федерация Таэквондо Кыргызской Республики</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Акматов Азамат Шаршенович</td>
+                                        <td>Бишкек</td>
+                                        <td>Федерация Таэквондо Кыргызской Республики</td>
+                                        <td>1</td>
+                                    </tr>                                    <tr>
+                                        <td>1</td>
+                                        <td>Акматов Азамат Шаршенович</td>
+                                        <td>Бишкек</td>
+                                        <td>Федерация Таэквондо Кыргызской Республики</td>
+                                        <td>1</td>
+                                    </tr>                                    <tr>
+                                        <td>1</td>
+                                        <td>Акматов Азамат Шаршенович</td>
+                                        <td>Бишкек</td>
+                                        <td>Федерация Таэквондо Кыргызской Республики</td>
+                                        <td>1</td>
+                                    </tr>
+
+                                    </tbody>
+                                </Table>
+
+                            </div>
+                        </Col>
+                    </Row>
                 </Tab>
             </Tabs>
-
 
 
         </div>

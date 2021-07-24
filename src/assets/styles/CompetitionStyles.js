@@ -15,6 +15,30 @@ const CompetitionStyle = {
     categories_wrapper: {
         paddingTop: '30px'
     },
+    top_result_text: {
+        fontSize: '24px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        lineHeight: '35px',
+        letterSpacing: '0.01em',
+        textAlign: 'left',
+        paddingTop: '5%',
+    },
+    main_result_wrapper: {
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection: 'column'
+    },
+    main_result_text: {
+        fontSize: '24px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        lineHeight: '35px',
+    },
+    main_result_img_wrapper: {
+        border: '1px solid #000000',
+boxSizing: 'border-box'
+    },
     title: {
         fontSize: '28px',
         fontStyle: 'normal',
@@ -29,12 +53,20 @@ const CompetitionStyle = {
         display: 'flex',
         flexDirection: 'column',
         border: '1px solid',
-
+        alignItems: 'center'
+    },
+    card_text_bold: {
+        fontSize: '20px',
+        fontStyle: 'normal',
+        fontWeight: '600',
+        lineHeight: '30px',
+        letterSpacing: '0.01em',
+        textAlign: 'left'
     },
     news_main_card_wrapper: {
         marginTop: '20px',
-        height: "150px",
-        color: "#ED2840 !important"
+        height: "130px",
+        color: "white"
     },
     card_wrapper: {
         display: 'flex',
@@ -61,19 +93,18 @@ const CompetitionStyle = {
     },
     news_main_card_text_wrapper: {
         position: 'absolute',
-        bottom: '5%',
-        left: '10%'
+        bottom: '0',
+        left: '30px',
     }, news_main_card_text: {
-        fontSize: '24px',
-        fontWeight: '600',
-        lineHeight: '35px'
+        fontSize: '18px',
+        fontWeight: '700',
+        lineHeight: '26px'
     },
     hr: {
-        marginLeft: '7%',
-        marginTop: '0',
-        height: '3px',
-        width: '40px',
-        color: '#ED2840 !important'
+        height: '1px',
+        width: '80px',
+        align: 'left',
+        backgroundColor: 'white'
     },
     card_status: {
         color: '#ED2840',
