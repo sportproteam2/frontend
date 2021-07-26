@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
-import style from "../assets/styles/CompetitionStyles";
+import style from "../../assets/styles/CompetitionStyles";
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Row} from 'react-bootstrap';
-import eventData from "../assets/data/EventData";
+import eventData from "../../assets/data/EventData";
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import Table from 'react-bootstrap/Table'

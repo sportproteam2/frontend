@@ -4,13 +4,13 @@ import Footer from "./components/Footer/Footer"
 import Rating from "./views/RatingPage/Rating"
 import Federation from "./views/Federation"
 import Main from "./views/Main"
-import Competition from "./views/Competition"
+import Competition from "./views/competitionPage/Competition"
 import News from "./views/News"
 import AboutUs from "./views/AboutUs"
 import Contact from "./views/Contact"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import NewsDetailedItem from "./views/NewsPage/NewsDetailedItem";
-import CompetitionDetailed from "./views/CompetitionDetailed";
+import CompetitionDetailed from "./views/competitionPage/CompetitionDetailed";
 import RatingDetailed from "./views/RatingPage/RatingDetailed";
 
 function App() {

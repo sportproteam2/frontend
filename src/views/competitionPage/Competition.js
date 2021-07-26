@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
-import style from "../assets/styles/CompetitionStyles";
+import style from "../../assets/styles/CompetitionStyles";
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Row} from 'react-bootstrap';
 import Form from "react-bootstrap/Form";
-import federationsData from "../assets/data/FederationsData";
-import eventData from "../assets/data/EventData";
+import federationsData from "../../assets/data/FederationsData";
+import eventData from "../../assets/data/EventData";
 
 const aboutUsStyle = makeStyles(style);
 
@@ -99,7 +99,7 @@ function Competition() {
                             <div className={classes.card_text_wrapper}>
                                 <p className={classes.card_text_title}>{e.name}</p>
                                 <p className={classes.card_text_desc}>{e.location}</p>
-                                <p className={classes.card_text_desc}>{e.date.slice(0,10)}</p>
+                                <p className={classes.card_text_desc}>{e.date}</p>
                                 <hr/>
                                 <p className={classes.card_status}>Завершено</p>
                             </div>
