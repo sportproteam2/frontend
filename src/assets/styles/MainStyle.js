@@ -27,18 +27,23 @@ const mainStyle = {
         backgroundColor: '#020712',
         display: 'flex',
         justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingRight: '5%',
-        paddingLeft: '5%'
+        alignItems: 'center'
+    },
+    news_container: {
+        marginRight: '5%',
+        marginLeft: '5%'
     },
     news_item: {
         marginTop: '0',
         marginBottom: '5%',
-        marginRight: '50px'
+        // marginRight: '10px',
+        // marginLeft: '10px',
+        display: 'flex'
     },
     photo: {
-      height: '200px',
-        // width: '100% !important'
+        height: '162px',
+        width: '162px',
+        objectFit: 'cover'
     },
     photo_wrapper: {
         height: '150px',
@@ -49,7 +54,11 @@ margin: '0 !important',
         textAlign: 'Left',
         color: 'white',
         padding: '10px',
-        height:'150px',
+        height:'162px',
+        width: '400px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'space-around',
         backgroundColor: '#ED2840'
     },
     news_hr: {

@@ -4,11 +4,13 @@ import style from "../../assets/styles/MainStyle";
 import {makeStyles} from "@material-ui/core/styles";
 import axios from "axios";
 
-const allSports = makeStyles(style);
+import SportCategoryData from "../../assets/data/SportsCategoryData";
+import SportsData from "../../assets/data/SportsData";
 
 function AllFederations() {
+    const allSports = makeStyles(style);
     const classes = allSports();
-    const [sportsCategoryNames, setSportsCategoryNames] = useState([]);
+    const [sportsCategoryNames, setSportsCategoryNames] = useState(SportCategoryData);
     const [sportsData, setSportsData] = useState([]);
 
     useEffect(async () => {
@@ -16,11 +18,12 @@ function AllFederations() {
         setSportsCategoryNames(res.data);
         let data = [];
         for (const x of sportsCategoryNames) {
-            const res2 = axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + x.id);
+            const res2 = await axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + x.id)
             data.push([{"categ": x.name}, {"sports": res2.data}]);
+            console.log('res2', res2.data);
         }
         setSportsData(data);
-        // console.log('sportsDatata', sportsData);
+        console.log('data', data)
     }, [])
     return (
         <Container className={classes.all_sports_wrapper}>
@@ -29,8 +32,7 @@ function AllFederations() {
                 {
                     sportsData.map((item) => {
                         return (
-                            <div>
-                                { (item[1].sports.length > 0) &&
+                            <div>{ (item[1].sports.length>0) &&
                                 <p className={classes.all_sports_title}>{item[0].categ}</p>}
                                 <Row className={classes.all_sports_card_wrapper}>
                                     {item[1].sports.map((subitem) => {
@@ -47,6 +49,7 @@ function AllFederations() {
                                     })
                                     }
                                 </Row>
+
                             </div>
                         )
                     })

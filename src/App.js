@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
-import Rating from "./views/Rating"
+import Rating from "./views/RatingPage/Rating"
 import Federation from "./views/Federation"
 import Main from "./views/Main"
 import Competition from "./views/Competition"
@@ -11,6 +11,7 @@ import Contact from "./views/Contact"
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import NewsDetailedItem from "./views/NewsPage/NewsDetailedItem";
 import CompetitionDetailed from "./views/CompetitionDetailed";
+import RatingDetailed from "./views/RatingPage/RatingDetailed";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
                     <Route exact path="/newsItem/1" component={NewsDetailedItem} />
                     <Route exact path="/competitions/1" component={CompetitionDetailed} />
                     <Route exact path="/rating" component={Rating}/>
+                    <Route exact path="/rating/1" component={RatingDetailed}/>
                     <Route exact path="/federations" component={Federation}/>
                     <Route exact path="/competitions" component={Competition}/>
                     <Route exact path="/news" component={News}/>

@@ -20,25 +20,26 @@ function News(){
     console.log("newsData: " + newsData)
     const news = newsData.slice(0, 3).map((n) => {
         return (
-            <div className={classes.news_item}>
-                <Row>
-                    <Col xs={5} className={classes.photo_wrapper}>
+            <Col xs={4} className={classes.news_item} key={n.id}>
+                    <div className={classes.photo_wrapper}>
                         <img src={n.photo} alt={n.tag} className={classes.photo}/>
-                    </Col>
-                    <Col xs={7} className={classes.news_text_wrapper}>
+                    </div>
+                    <div className={classes.news_text_wrapper}>
                         <p className={classes.news_text_tag}>Последние новости</p>
                         <p className={classes.news_text_title}>{n.title}</p>
                         <p className={classes.news_text_additional}>
                             <Link to={'/newsItem/' + n.id} className={classes.news_text_anchor}>Подробнее</Link>
                         </p>
-                    </Col>
-                </Row>
-            </div>
+                    </div>
+            </Col>
         )
     })
     return (
         <div className={classes.news_wrapper}>
-            {news}
+            <Row className={classes.news_container}>
+                {news}
+            </Row>
+
         </div>
     );
 }

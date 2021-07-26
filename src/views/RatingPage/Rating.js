@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import style from "../assets/styles/ContactStyles";
+import style from "../../assets/styles/ContactStyles";
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Row} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import federationsData from "../assets/data/FederationsData";
+import federationsData from "../../assets/data/FederationsData";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 

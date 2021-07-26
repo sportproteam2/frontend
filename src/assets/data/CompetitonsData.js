@@ -16,4 +16,4 @@ const competitionsData = [
     }
 ]
 
-export default competitionsData
+export default competitionsData;
