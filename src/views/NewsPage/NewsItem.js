@@ -20,7 +20,7 @@ function NewsItem(props) {
                             <span className={classes.news_item_text_tag}>{n.sport.name}</span>
                         </p>
                         <p className={classes.news_item_text_title}>{n.title}</p>
-                            <p className={classes.news_item_text_additional}>Подробнее</p>
+                            <Link to={'/news/' + n.id} className={classes.news_item_text_additional}>Подробнее</Link>
                     </div>
                 </div>
             </Col>
@@ -29,21 +29,20 @@ function NewsItem(props) {
     return (
         <Row>
             <Col xs={12}>
-                <div className={classes.news_global_item_wrapper}>
-                    <img src={props.items[0].photo} alt={props.items[0].tags}
-                         className={classes.news_data_item_img}/>
-                    <div className={classes.news_data_text}>
-                        <p className={classes.news_data_date}>{props.items[0].dateofadd.slice(0, 10)}
-                            <span className={classes.news_data_sport_type}>{props.items[0].sport.name}</span>
-                        </p>
-                        <p className={classes.news_data_sport_title}>{props.items[0].title}</p>
-                        <p className={classes.news_data_sport_desc}>{props.items[0].article.slice(0,400)} ...</p>
-                        <p className={classes.news_data_text_additional}>
-                            <Link to={'/newsItem/1'} className={classes.news_data_text_anchor}>Подробнее
-                            </Link>
-                        </p>
-                    </div>
-                </div>
+                {/*<div className={classes.news_global_item_wrapper}>*/}
+                {/*    <img src={props.items[0].photo} alt={props.items[0].tags} className={classes.news_data_item_img}/>*/}
+                {/*    <div className={classes.news_data_text}>*/}
+                {/*        <p className={classes.news_data_date}>{props.items[0].dateofadd.slice(0, 10)}*/}
+                {/*            <span className={classes.news_data_sport_type}>{props.items[0].sport.name}</span>*/}
+                {/*        </p>*/}
+                {/*        <p className={classes.news_data_sport_title}>{props.items[0].title}</p>*/}
+                {/*        <p className={classes.news_data_sport_desc}>{props.items[0].article.slice(0,400)} ...</p>*/}
+                {/*        <p className={classes.news_data_text_additional}>*/}
+                {/*            <Link to={'/newsItem/1'} className={classes.news_data_text_anchor}>Подробнее*/}
+                {/*            </Link>*/}
+                {/*        </p>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
                 <Row className={classes.news_items}>
                     {news}
                 </Row>

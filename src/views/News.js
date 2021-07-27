@@ -51,12 +51,18 @@ function News() {
             setSelectedSportId(1);
             fetch("https://sportproteam2.herokuapp.com/api/news/?sport=1")
                 .then((response) => response.json())
-                .then(res => setNewsSport(res));
+                .then(res => {
+                    console.log('RESULT', res)
+                    setNewsSport(res)
+                });
         }
 
         fetch("https://sportproteam2.herokuapp.com/api/sport/?category=" + event.target.value)
             .then((response) => response.json())
             .then(res => setSportNames(res));
+
+        console.log("newsport", newsSport)
+
     }
 
     function selectSecondForm(event) {
@@ -68,7 +74,7 @@ function News() {
             .then((response) => response.json())
             .then(res => setNewsSport(res));
 
-        // console.log("newsport", newsSport)
+        console.log("newsport", newsSport)
 
     }
 

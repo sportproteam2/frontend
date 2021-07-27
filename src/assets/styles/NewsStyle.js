@@ -89,7 +89,9 @@ const NewsStyle = {
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.04)'
     },
     news_item_img: {
-        height: '150px'
+        height: '150px',
+        width: '150px',
+        objectFit: 'cover'
     },
     news_item_text_wrapper: {
         backgroundColor: '#FFFFFF',

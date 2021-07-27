@@ -9,11 +9,11 @@ import Table from 'react-bootstrap/Table'
 
 const aboutUsStyle = makeStyles(style);
 
-function CompetitionDetailed() {
+function CompetitionDetailed({match}) {
     const classes = aboutUsStyle();
     const [events, setSEvents] = useState([]);
     useEffect(() => {
-        fetch("https://sportproteam2.herokuapp.com/api/event/")
+        fetch("https://sportproteam2.herokuapp.com/api/event/" + match.param.id)
             .then((response) => response.json())
             .then(res => setSEvents(res));
     }, [])

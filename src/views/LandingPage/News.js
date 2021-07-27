@@ -28,7 +28,7 @@ function News(){
                         <p className={classes.news_text_tag}>Последние новости</p>
                         <p className={classes.news_text_title}>{n.title}</p>
                         <p className={classes.news_text_additional}>
-                            <Link to={'/newsItem/' + n.id} className={classes.news_text_anchor}>Подробнее</Link>
+                            <Link to={'/news/' + n.id} className={classes.news_text_anchor}>Подробнее</Link>
                         </p>
                     </div>
             </Col>

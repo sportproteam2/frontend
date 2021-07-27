@@ -86,7 +86,7 @@ function Contact() {
                     {(selectedSport !== 0) &&
                     <Col xs={8} className={classes.contacts_info_wrapper}>
                         <p className={classes.contact_title}>Contacts</p>
-                        <p>{selectedSport.contacts}</p>
+                        <p>{selectedSport[0].contacts}</p>
                     </Col>
                     }
 

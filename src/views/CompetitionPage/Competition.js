@@ -5,6 +5,7 @@ import {Col, Row} from 'react-bootstrap';
 import Form from "react-bootstrap/Form";
 import federationsData from "../../assets/data/FederationsData";
 import eventData from "../../assets/data/EventData";
+import {Link} from "@material-ui/core";
 
 const aboutUsStyle = makeStyles(style);
 
@@ -95,7 +96,6 @@ function Competition() {
                     return (
                         <Col xs={3} className={classes.card_wrapper}>
                             <img src={e.photo} alt={e.id} className={classes.card_img}/>
-
                             <div className={classes.card_text_wrapper}>
                                 <p className={classes.card_text_title}>{e.name}</p>
                                 <p className={classes.card_text_desc}>{e.location}</p>
