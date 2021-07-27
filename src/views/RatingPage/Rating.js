@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import federationsData from "../../assets/data/FederationsData";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import { Redirect } from 'react-router';
 
 const aboutUsStyle = makeStyles(style);
 
@@ -17,6 +18,7 @@ function Rating() {
     const [sportCategory, setSportCategory] = useState([]);
     const [selectedSportId, setSelectedSportId] = useState(0);
     const [players, setPlayers] = useState([]);
+
     useEffect(() => {
         fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
             .then((response) => response.json())
@@ -38,6 +40,12 @@ function Rating() {
 
         if (sportNames.length >= 1) {
             setSelectedSportId(1);
+            fetch("https://sportproteam2.herokuapp.com/api/players/?sport=1")
+                .then((response) => response.json())
+                .then(res => {
+                    console.log("players", res)
+                    setPlayers(res)
+                });
         }
     }
 
@@ -55,12 +63,21 @@ function Rating() {
             });
     }
 
+    function handleOnClick(id) {
+            return <Redirect push to={'/rating/' + id}/>
+    }
+
     const tableData = players.map((p, i) => {
-        return (<tr>
-            <td>{++i}</td>
+        return (
+            <tr key={i} onClick={handleOnClick(p.id)}>
+
+                <td>{++i}</td>
             <td>{p.name + " " + p.surname}</td>
             <td>Кыргызстан</td>
-        </tr>)
+
+        </tr>
+
+        )
     })
 
     function submitSearch(event){

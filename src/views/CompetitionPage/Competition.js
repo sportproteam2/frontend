@@ -5,7 +5,6 @@ import {Col, Row} from 'react-bootstrap';
 import Form from "react-bootstrap/Form";
 import federationsData from "../../assets/data/FederationsData";
 import eventData from "../../assets/data/EventData";
-import {Link} from "@material-ui/core";
 
 const aboutUsStyle = makeStyles(style);
 

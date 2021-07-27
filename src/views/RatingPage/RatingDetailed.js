@@ -1,21 +1,28 @@
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Row} from "react-bootstrap";
 import style from "../../assets/styles/RatingStyle";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 
 const ratingStyle = makeStyles(style);
-function RatingDetailed(props) {
-
+function RatingDetailed({match}) {
     const classes = ratingStyle();
+    const [player, setPlayer] = useState();
+
+    useEffect(() => {
+        fetch("https://sportproteam2.herokuapp.com/api/players/" + match.param.id)
+            .then((response) => response.json())
+            .then(res => setPlayer(res));
+    }, [])
+
     return (
         <div className={classes.container_wrapper}>
             <div className={classes.upper_container_wrapper}>
                 <img src={'/rating_img.png'} className={classes.upper_container_img}/>
                 <div className={classes.upper_text_wrapper}>
-                    <p className={classes.bolder_title}>Фариз Сабитов</p>
+                    <p className={classes.bolder_title}>{player.name + " " + player.surname}</p>
                     <p className={classes.simple_text}>Wt Лицензия №: KOR-5600</p>
                 </div>
             </div>
