@@ -18,8 +18,9 @@ function Header(){
     const [listItemAnchor, setListItemAnchor] = useState(classes.listItem_anchor);
 
 
-    const listenScrollEvent = (listenScrollEvent) => {
-        if (window.scrollY < 70){
+    const listenScrollEvent = () => {
+        if ((window.scrollY <= 60)  && (window.location.pathname === '/')){
+            console.log("SCROLLY", window.scrollY)
             setListItemAnchor(classes.listItem_anchor);
             setHeader(classes.appBar);
             setLogo(logo1);

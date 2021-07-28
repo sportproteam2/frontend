@@ -1,7 +1,7 @@
 const headerMenuData = [
     {
         id: '1',
-        path: '/federations',
+        path: '/federations/1',
         title: 'Федерации'
     },
     {

@@ -4,30 +4,33 @@ import {makeStyles} from "@material-ui/core/styles";
 import style from "../assets/styles/AboutUsStyle";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import {useSelector} from "react-redux";
 
 const aboutUsStyle = makeStyles(style);
 
-function Federation() {
+function Federation({match}) {
     const classes = aboutUsStyle();
     const [aboutData, setAboutData] = useState([]);
     const [fedData, setFedData] = useState([]);
     const [eventData, setEventData] = useState([]);
     const [newsData, setNewsData] = useState([]);
     const [galleryData, setGalleryData] = useState([]);
+    const currentSport = useSelector((state) => state.federation);
+
     useEffect(() => {
-        fetch("https://sportproteam2.herokuapp.com/api/sport/1")
+        fetch("https://sportproteam2.herokuapp.com/api/sport/" + currentSport)
             .then((response) => response.json())
             .then(res => setAboutData(res))
         fetch("https://sportproteam2.herokuapp.com/api/gallery/")
             .then((response) => response.json())
             .then(res => setGalleryData(res))
-        fetch("https://sportproteam2.herokuapp.com/api/federation/?sport=1")
+        fetch("https://sportproteam2.herokuapp.com/api/federation/?sport=" + currentSport)
             .then((response) => response.json())
             .then(res => setFedData(res))
-        fetch("https://sportproteam2.herokuapp.com/api/event/?federation=1")
+        fetch("https://sportproteam2.herokuapp.com/api/event/?federation=" + fedData.id)
             .then((response) => response.json())
             .then(res => setEventData(res))
-        fetch("https://sportproteam2.herokuapp.com/api/news/?federation=1")
+        fetch("https://sportproteam2.herokuapp.com/api/news/?federation="  + fedData.id)
             .then((response) => response.json())
             .then(res => setNewsData(res))
 

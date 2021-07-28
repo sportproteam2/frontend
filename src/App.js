@@ -26,7 +26,7 @@ function App() {
                     <Route exact path="/competitions/:id" component={CompetitionDetailed} />
                     <Route exact path="/rating" component={Rating}/>
                     <Route exact path="/rating/:id" component={RatingDetailed}/>
-                    <Route exact path="/federations" component={Federation}/>
+                    <Route exact path="/federations/:id" component={Federation}/>
                     <Route exact path="/competitions" component={Competition}/>
                     <Route exact path="/news" component={News}/>
                     <Route exact path="/about-us" component={AboutUs}/>

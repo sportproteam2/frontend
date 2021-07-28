@@ -6,6 +6,7 @@ const headerStyle = {
         backgroundColor: 'transparent !important',
         borderBottom: 'solid 1px'
     },
+
     appBar2: {
         backgroundColor: 'white !important',
         borderBottom: 'solid 1px',
