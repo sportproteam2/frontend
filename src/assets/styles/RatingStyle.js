@@ -49,6 +49,10 @@ const RatingStyle = {
         paddingLeft: '10%',
         paddingRight: '10%'
     },
+    to_right: {
+        marginLeft: 'auto',
+        marginRight: '0'
+    },
     rating_table_wrapper: {
         marginTop: '5%',
         marginLeft: '1%'

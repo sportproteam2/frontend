@@ -93,7 +93,7 @@ function RatingDetailed({match}) {
                 </Form>
                 <Table bordered hover className={classes.rating_table_wrapper}>
                     <thead>
-                    <tr>
+                    <tr >
                         <th className={classes.table_header}>Меропрятие</th>
                         <th className={classes.table_header}>Дата события</th>
                         <th className={classes.table_header}>Расположение</th>
@@ -104,7 +104,9 @@ function RatingDetailed({match}) {
                     <tbody>
                     {events.map( (e) => {
                         return (
-                    <tr>
+                    <tr onClick={ () => {
+                        history.push(`/competitions/${e.id}`)
+                    }}>
                         <th>{e.name}</th>
                         <th>{e.dateofstart}</th>
                         <th>{e.location}</th>

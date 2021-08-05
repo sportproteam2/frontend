@@ -125,32 +125,6 @@ function CompetitionDetailed({match}) {
                         </Col>
                     </Row>
                 </Tab>
-                <Tab eventKey="team" title="Команда">
-                    <Table bordered hover className={classes.table_wrapper}>
-                        <thead>
-                        <tr>
-                            <th>№</th>
-                            <th>Город</th>
-                            <th>Организация</th>
-                            <th>Участники</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {/*{events.players.map((e, i) => {*/}
-                        {/*    return(*/}
-                        {/*        <tr>*/}
-                        {/*            <td>{++i}</td>*/}
-                        {/*            <td></td>*/}
-                        {/*            <td>Федерация Таэквондо Кыргызской Республики</td>*/}
-                        {/*            <td>1</td>*/}
-                        {/*        </tr>*/}
-                        {/*    )*/}
-                        {/*})}*/}
-
-                        </tbody>
-                    </Table>
-
-                </Tab>
                 <Tab eventKey="players" title="Участники">
                     <Row>
                         <Col xs={2}>
