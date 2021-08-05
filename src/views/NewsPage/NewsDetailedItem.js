@@ -12,6 +12,7 @@ function NewsDetailedItem({match}) {
     const [newsData, setNewsData] = useState(newData);
 
     useEffect(() => {
+        console.log('match', match.params.id)
         fetch('https://sportproteam2.herokuapp.com/api/news/' + match.params.id)
             .then((response) => response.json())
             .then(

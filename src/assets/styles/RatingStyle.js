@@ -10,7 +10,8 @@ const RatingStyle = {
     },
     upper_container_img: {
       height: '100px',
-      width: '100px'
+      width: '100px',
+        borderRadius: '50%'
     },
     upper_text_wrapper: {
         display: 'flex',

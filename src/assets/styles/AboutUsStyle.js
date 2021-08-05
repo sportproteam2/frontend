@@ -93,6 +93,11 @@ const aboutUsStyle = {
         paddingLeft: '10%',
         paddingRight: '10%',
     },
+    rating_wrapper: {
+      display: 'flex',
+      alignContent: 'center',
+      // justifyContent: 'center'
+    },
     rating_table_wrapper: {
         marginTop: '5%',
         marginLeft: '1%'
@@ -114,10 +119,13 @@ const aboutUsStyle = {
         alignContent: 'center'
     },
     event_card_wrapper: {
+        width: '400px',
         marginLeft: '10px',
         border: 'solid #ED2840',
     },
     event_card_text_wrapper: {
+        paddingLeft: '20px',
+        paddingRight: '20px',
         marginTop: '10px',
         marginBottom: '10px'
     },

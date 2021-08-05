@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import { useSelector} from "react-redux";
 import {useHistory} from "react-router";
-import {changeSport} from "../store/actions";
 
 const aboutUsStyle = makeStyles(style);
 
@@ -91,10 +90,12 @@ function Federation() {
                     <p className={classes.about_desc_title}>Программа соревнований</p>
                 </Col>
                 <Col xs={12} className={classes.ratings}>
-                    <Row>
+                    <div className={classes.rating_wrapper}>
                         {eventData.map((item) => {
                                 return (
-                                    <Col xs={3} className={classes.event_card_wrapper}>
+                                    <div className={classes.event_card_wrapper} onClick={ () => {
+                                        history.push(`/competitions/${item.id}`)
+                                    }}>
                                         <div className={classes.event_card_text_wrapper}>
                                             <p className={classes.event_card_title}>{item.name}</p>
                                             <Row>
@@ -114,11 +115,10 @@ function Federation() {
                                             <hr/>
                                             <p className={classes.event_card_status}>{item.status}</p>
                                         </div>
-                                    </Col>)
+                                    </div>)
                             }
                         )}
-
-                    </Row>
+                    </div>
                     <p className={classes.about_desc_title}>Рейтинги спортсменов</p>
                     <Form onSubmit={submitForm}>
                         <Form.Row>
@@ -158,7 +158,9 @@ function Federation() {
                         <tbody>
                         {playersData.map((item, count) => {
                             return (
-                                    <tr>
+                                    <tr onClick={ () => {
+                                        history.push(`/rating/${item.id}`)
+                                    }}>
                                         <td>{++count}</td>
                                         <td>{item.name} {item.surname}</td>
                                         <td>Кыргызстан</td>

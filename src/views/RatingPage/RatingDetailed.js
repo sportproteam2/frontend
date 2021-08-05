@@ -5,63 +5,52 @@ import React, {useEffect, useState} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import axios from "axios";
+import {useHistory} from "react-router";
 
 const ratingStyle = makeStyles(style);
 function RatingDetailed({match}) {
     const classes = ratingStyle();
-    const [player, setPlayer] = useState();
+    const history = useHistory();
+    const [player, setPlayer] = useState({});
+    const [events, setEvents] = useState([]);
 
-    useEffect(() => {
-        fetch("https://sportproteam2.herokuapp.com/api/players/" + match.param.id)
-            .then((response) => response.json())
-            .then(res => setPlayer(res));
+    useEffect(async () => {
+        const playersResult = await axios.get("https://sportproteam2.herokuapp.com/api/players/" + match.params.id)
+        setPlayer(playersResult.data);
+        const eventData = await axios.get("https://sportproteam2.herokuapp.com/api/event/?player=" + match.params.id)
+        setEvents(eventData.data);
     }, [])
 
     return (
         <div className={classes.container_wrapper}>
             <div className={classes.upper_container_wrapper}>
-                <img src={'/rating_img.png'} className={classes.upper_container_img}/>
+                <img src={player.photo} className={classes.upper_container_img}/>
                 <div className={classes.upper_text_wrapper}>
                     <p className={classes.bolder_title}>{player.name + " " + player.surname}</p>
-                    <p className={classes.simple_text}>Wt Лицензия №: KOR-5600</p>
+                    <p className={classes.simple_text}>{player.license}</p>
                 </div>
             </div>
             <div className={classes.tournament_container_wrapper}>
                 <p className={classes.bolder_title}>Турниры</p>
                 <Row>
-                    <Col xs={4}>
-                        <div className={classes.card_wrapper}>
-                                <div className={classes.card_text_wrapper}>
-                                    <p className={classes.card_title}>Открытое первенство
-                                        по Таэквондо ВТФ</p>
-                                    <p>Юниоры 2004-2002 г | 63 кг</p>
-                                    <hr/>
-                                    <p className={classes.card_status}>1 место</p>
+                    {events.slice(0,2).map( (e) => {
+                        return (
+                            <Col xs={4} onClick={ () => {
+                                history.push(`/competitions/${e.id}`)
+                            }}>
+                                <div className={classes.card_wrapper}>
+                                    <div className={classes.card_text_wrapper}>
+                                        <p className={classes.card_title}>{e.name}</p>
+                                        <p>{e.location}</p>
+                                        <hr/>
+                                        <p className={classes.card_status}>1 место</p>
+                                    </div>
                                 </div>
-                        </div>
-                    </Col>
-                    <Col xs={4}>
-                        <div className={classes.card_wrapper}>
-                            <div className={classes.card_text_wrapper}>
-                                <p className={classes.card_title}>Открытое первенство
-                                    по Таэквондо ВТФ</p>
-                                <p>Юниоры 2004-2002 г | 63 кг</p>
-                                <hr/>
-                                <p className={classes.card_status}>1 место</p>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col xs={4}>
-                        <div className={classes.card_wrapper}>
-                            <div className={classes.card_text_wrapper}>
-                                <p className={classes.card_title}>Открытое первенство
-                                    по Таэквондо ВТФ</p>
-                                <p>Юниоры 2004-2002 г | 63 кг</p>
-                                <hr/>
-                                <p className={classes.card_status}>1 место</p>
-                            </div>
-                        </div>
-                    </Col>
+                            </Col>
+                        )
+                    })}
+
                 </Row>
             </div>
             <div className={classes.table_wrapper}>
@@ -106,7 +95,6 @@ function RatingDetailed({match}) {
                     <thead>
                     <tr>
                         <th className={classes.table_header}>Меропрятие</th>
-                        <th className={classes.table_header}>Ранг</th>
                         <th className={classes.table_header}>Дата события</th>
                         <th className={classes.table_header}>Расположение</th>
                         <th className={classes.table_header}>Место</th>
@@ -114,14 +102,17 @@ function RatingDetailed({match}) {
                     </tr>
                     </thead>
                     <tbody>
+                    {events.map( (e) => {
+                        return (
                     <tr>
-                        <th>Финал Гран-при по  таэквондо в Москве-2019</th>
-                        <th>G-8</th>
-                        <th>6-7 декабря 2019г</th>
-                        <th>Москва,Россия</th>
+                        <th>{e.name}</th>
+                        <th>{e.dateofstart}</th>
+                        <th>{e.location}</th>
                         <th>1</th>
                         <th>457,62</th>
                     </tr>
+                        )
+                    })}
                     </tbody>
                 </Table>
             </div>

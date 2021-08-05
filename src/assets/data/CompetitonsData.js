@@ -1,18 +1,18 @@
 const competitionsData = [
     {
         id: '1',
-        path: process.env.PUBLIC_URL + '/banner1.jpg',
-        desc: 'Мы едины!'
+        photo: process.env.PUBLIC_URL + '/banner1.jpg',
+        name: 'Мы едины!'
     },
     {
         id: '2',
-        path: process.env.PUBLIC_URL + '/banner1.jpg',
-        desc: 'Мы едины!'
+        photo: process.env.PUBLIC_URL + '/banner2.jpg',
+        name: 'Мы едины!'
     },
     {
         id: '3',
-        path: process.env.PUBLIC_URL + '/banner1.jpg',
-        desc: 'Мы едины!'
+        photo: process.env.PUBLIC_URL + '/banner1.jpg',
+        name: 'Мы едины!'
     }
 ]
 

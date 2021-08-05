@@ -14,7 +14,8 @@ const mainStyle = {
         display: 'none'
     },
     carousel_img: {
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
+        width: '100%'
     },
     button: {
         left: '0',

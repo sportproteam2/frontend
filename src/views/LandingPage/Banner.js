@@ -17,9 +17,9 @@ function Banner(){
     // }, [])
     const carouselData = bannerData.map((c) => {
         return (<Carousel.Item interval={5000} key={c.id}>
-            <img src={c.path} alt={c.id} className={classes.carousel_img}/>
+            <img src={c.photo} alt={c.id} className={classes.carousel_img}/>
             {/*<Carousel.Caption className={classes.caption}>*/}
-            {/*    <p>{c.desc}</p>*/}
+            {/*    <p>{c.name}</p>*/}
             {/*    <Button variant="danger" href={"https://sportproteam2.herokuapp.com/api/event" + c.id} className={classes.button}>Перейти к соревнованиям</Button>*/}
             {/*</Carousel.Caption>*/}
         </Carousel.Item>)
