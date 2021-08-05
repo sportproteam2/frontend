@@ -1,11 +1,14 @@
 import React, {useEffect, useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import style from "../assets/styles/NewsStyle";
+import style from "../../assets/styles/NewsStyle";
 import {makeStyles} from "@material-ui/core/styles";
-import NewsItem from "./NewsPage/NewsItem";
+import NewsItem from "./NewsItem";
 import Pagination from 'react-bootstrap/Pagination';
-import federationsData from "../assets/data/FederationsData";
+import federationsData from "../../assets/data/FederationsData";
+import axios from "axios";
+import {useSelector} from "react-redux";
+import categoryData from "../../assets/data/SportsCategoryData";
 
 const newsStyle = makeStyles(style);
 
@@ -14,24 +17,25 @@ function News() {
     const [sportNames, setSportNames] = useState(federationsData);
     const [selectedCatId, setSelectedCatId] = useState(0);
     const [selectedCat, setSelectedCat] = useState();
-    const [sportCategory, setSportCategory] = useState([]);
-    const [selectedSportId, setSelectedSportId] = useState(0);
+    const [sportCategory, setSportCategory] = useState(categoryData);
+    const [selectedSportId, setSelectedSportId] = useState();
     const [newsSport, setNewsSport] = useState([]);
+    const selectedSport = useSelector((state) => state.sport);
 
-    // let active = 1;
-    // let items = [];
-    // for (let number = 1; number <= 3; number++) {
-    //     items.push(
-    //         <Pagination.Item key={number} active={number === active}>
-    //             {number}
-    //         </Pagination.Item>,
-    //     );
-    // }
-
-    useEffect(() => {
-        fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
-            .then((response) => response.json())
-            .then(res => setSportCategory(res));
+    useEffect(async () => {
+        if (selectedSport){
+            setSelectedCatId( selectedSport.category.id);
+            setSelectedCat( selectedSport.category.name);
+            setSelectedSportId( selectedSport.id);
+            const playersResult = await axios.get("https://sportproteam2.herokuapp.com/api/news/?sport=" + selectedSport.id)
+            setNewsSport(playersResult.data.results);
+            const sportNames = await axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + selectedSport.category.id)
+            setSportNames(sportNames.data);
+        } else {
+            fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
+                .then((response) => response.json())
+                .then(res => setSportCategory(res));
+        }
     }, [])
 
     function selectFirstForm(event) {
@@ -51,17 +55,9 @@ function News() {
             setSelectedSportId(1);
             fetch("https://sportproteam2.herokuapp.com/api/news/?sport=1")
                 .then((response) => response.json())
-                .then(res => {
-                    console.log('RESULT', res)
-                    setNewsSport(res)
-                });
+                .then(res => setNewsSport(res.results));
         }
 
-        fetch("https://sportproteam2.herokuapp.com/api/sport/?category=" + event.target.value)
-            .then((response) => response.json())
-            .then(res => setSportNames(res));
-
-        console.log("newsport", newsSport)
 
     }
 
@@ -72,18 +68,11 @@ function News() {
 
         fetch("https://sportproteam2.herokuapp.com/api/news/?sport=" + event.target.value)
             .then((response) => response.json())
-            .then(res => setNewsSport(res));
+            .then(res => setNewsSport(res.results));
 
-        console.log("newsport", newsSport)
 
     }
 
-    // const paginationBasic = (
-    //     <div className={classes.news_pagination}>
-    //         <Pagination>{items}</Pagination>
-    //     </div>
-    // );
-    //
     return (
         <div className={classes.contact_wrapper}>
             <p className={classes.contact_title}>Новости</p>
@@ -106,7 +95,7 @@ function News() {
                         <Form.Group controlId="exampleForm.ControlSelect2">
                             <Form.Label className={classes.contact_dropdown_label}>{selectedCat}</Form.Label>
                             <Form.Control as="select" size="lg"
-                                          value={selectedCatId}
+                                          value={selectedSportId}
                                           onChange={e => selectSecondForm(e)}>
                                 {sportNames.map(x => <option value={+x.id}>{x.name}</option>)}
                             </Form.Control>

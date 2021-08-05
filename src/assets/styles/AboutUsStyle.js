@@ -74,7 +74,8 @@ const aboutUsStyle = {
     news_main_card_text: {
         fontSize: '24px',
         fontWeight: '600',
-        lineHeight: '35px'
+        lineHeight: '35px',
+        paddingRight: '10px'
     },
     hr: {
         marginLeft: '7%',
@@ -113,7 +114,7 @@ const aboutUsStyle = {
         alignContent: 'center'
     },
     event_card_wrapper: {
-        marginLeft: '20px',
+        marginLeft: '10px',
         border: 'solid #ED2840',
     },
     event_card_text_wrapper: {

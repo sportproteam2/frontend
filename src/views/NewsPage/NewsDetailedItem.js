@@ -10,14 +10,15 @@ const newsItemStyle = makeStyles(style);
 function NewsDetailedItem({match}) {
     const classes = newsItemStyle();
     const [newsData, setNewsData] = useState(newData);
+
     useEffect(() => {
-        console.log('match.params.id', match.params.id)
         fetch('https://sportproteam2.herokuapp.com/api/news/' + match.params.id)
             .then((response) => response.json())
             .then(
                 res => setNewsData(res)
             )
     }, [])
+
     return (
 
         <div className={classes.news_single_item_wrapper}>

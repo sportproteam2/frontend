@@ -1,11 +1,10 @@
-import changeFederationReducer from './changeFederation';
-import pageReducer from './page';
+import changeSportReducer from './changeSport';
 import {combineReducers} from 'redux';
-import sportsReducer from "./sports";
+import sportCategoryReducer from "./category";
 
 const allReducers = combineReducers({
-    federation: changeFederationReducer,
-    isMain : pageReducer,
-    category: sportsReducer});
+    sport: changeSportReducer,
+    category: sportCategoryReducer
+});
 
 export default allReducers;

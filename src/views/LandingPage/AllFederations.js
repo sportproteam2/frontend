@@ -6,7 +6,7 @@ import axios from "axios";
 
 import SportCategoryData from "../../assets/data/SportsCategoryData";
 import {useDispatch, useSelector} from "react-redux";
-import {changeFederation} from "../../store/actions";
+import {changeSport} from "../../store/actions";
 import {useHistory} from "react-router";
 
 function AllFederations() {
@@ -16,7 +16,6 @@ function AllFederations() {
     const [sportsCategoryNames, setSportsCategoryNames] = useState(SportCategoryData);
     const [sportsData, setSportsData] = useState([]);
     const history = useHistory()
-    // const availableSports = useSelector((state) => state.category);
 
     const getSportsCatData = ()=>{
         fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
@@ -47,7 +46,7 @@ function AllFederations() {
                                         return (
                                             <Col xs={4}
                                                  onClick={ () => {
-                                                     dispatch(changeFederation(subitem.id));
+                                                     dispatch(changeSport(subitem));
                                                      history.push(`/federations/${subitem.id}`)
                                                  }}
                                             >

@@ -13,11 +13,8 @@ function News(){
     useEffect(() => {
         fetch("https://sportproteam2.herokuapp.com/api/news/")
             .then((response) => response.json())
-            .then(
-            res => setNewsData(res)
-        )
+            .then(res => setNewsData(res.results))
     }, [])
-    console.log("newsData: " + newsData)
     const news = newsData.slice(0, 3).map((n) => {
         return (
             <Col xs={4} className={classes.news_item} key={n.id}>
@@ -25,7 +22,7 @@ function News(){
                         <img src={n.photo} alt={n.tag} className={classes.photo}/>
                     </div>
                     <div className={classes.news_text_wrapper}>
-                        <p className={classes.news_text_tag}>Последние новости</p>
+                        <p className={classes.news_text_tag}>{n.tags}</p>
                         <p className={classes.news_text_title}>{n.title}</p>
                         <p className={classes.news_text_additional}>
                             <Link to={'/news/' + n.id} className={classes.news_text_anchor}>Подробнее</Link>
@@ -39,7 +36,6 @@ function News(){
             <Row className={classes.news_container}>
                 {news}
             </Row>
-
         </div>
     );
 }

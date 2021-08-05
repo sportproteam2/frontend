@@ -97,6 +97,7 @@ const NewsStyle = {
         backgroundColor: '#FFFFFF',
         paddingLeft: '15px',
         paddingTop: '15px',
+        paddingBottom: '15px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'left',

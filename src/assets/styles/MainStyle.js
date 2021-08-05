@@ -48,7 +48,7 @@ const mainStyle = {
     photo_wrapper: {
         height: '150px',
         padding: '0 !important',
-margin: '0 !important',
+        margin: '0 !important',
     },
     news_text_wrapper: {
         textAlign: 'Left',
@@ -58,7 +58,7 @@ margin: '0 !important',
         width: '400px',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'space-around',
+        justifyContent: 'space-between',
         backgroundColor: '#ED2840'
     },
     news_hr: {

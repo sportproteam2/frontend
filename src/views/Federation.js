@@ -4,37 +4,62 @@ import {makeStyles} from "@material-ui/core/styles";
 import style from "../assets/styles/AboutUsStyle";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
-import {useSelector} from "react-redux";
+import { useSelector} from "react-redux";
+import {useHistory} from "react-router";
+import {changeSport} from "../store/actions";
 
 const aboutUsStyle = makeStyles(style);
 
-function Federation({match}) {
+function Federation() {
     const classes = aboutUsStyle();
-    const [aboutData, setAboutData] = useState([]);
     const [fedData, setFedData] = useState([]);
     const [eventData, setEventData] = useState([]);
     const [newsData, setNewsData] = useState([]);
     const [galleryData, setGalleryData] = useState([]);
-    const currentSport = useSelector((state) => state.federation);
+    const [playersData, setPlayersData] = useState([]);
+    const [searchName, setSearchName] = useState();
+    const [searchWeight, setSearchWeight] = useState();
+    const [searchOrg, setSearchOrg] = useState();
+    const history = useHistory();
+    const aboutData = useSelector((state) => state.sport);
+
 
     useEffect(() => {
-        fetch("https://sportproteam2.herokuapp.com/api/sport/" + currentSport)
-            .then((response) => response.json())
-            .then(res => setAboutData(res))
         fetch("https://sportproteam2.herokuapp.com/api/gallery/")
             .then((response) => response.json())
             .then(res => setGalleryData(res))
-        fetch("https://sportproteam2.herokuapp.com/api/federation/?sport=" + currentSport)
+        fetch("https://sportproteam2.herokuapp.com/api/federation/?sport=" + aboutData.id)
             .then((response) => response.json())
-            .then(res => setFedData(res))
+            .then(res => setFedData(res[0]))
         fetch("https://sportproteam2.herokuapp.com/api/event/?federation=" + fedData.id)
             .then((response) => response.json())
             .then(res => setEventData(res))
         fetch("https://sportproteam2.herokuapp.com/api/news/?federation="  + fedData.id)
             .then((response) => response.json())
-            .then(res => setNewsData(res))
+            .then(res => setNewsData(res.results))
+        fetch("https://sportproteam2.herokuapp.com/api/players/?federation=" + fedData.id)
+            .then((response) => response.json())
+            .then(res => setPlayersData(res))
 
     }, [])
+
+    const submitForm = (event) => {
+        event.preventDefault();
+        let url = "https://sportproteam2.herokuapp.com/api/players/?sport=" + aboutData.id;
+        if (searchWeight !=null){
+            url += "&weight=" + searchWeight;
+        }
+        if ( searchName != null){
+            url += "&name=" + searchName;
+        }
+        if (searchOrg != null){
+            url += "&organization=" + searchOrg;
+        }
+        fetch(url)
+            .then((response) => response.json())
+            .then(res => setPlayersData(res))
+    }
+
 
     const galleryItem = galleryData.map(g => {
         return (
@@ -69,25 +94,25 @@ function Federation({match}) {
                     <Row>
                         {eventData.map((item) => {
                                 return (
-                                    <Col xs={4} className={classes.event_card_wrapper}>
+                                    <Col xs={3} className={classes.event_card_wrapper}>
                                         <div className={classes.event_card_text_wrapper}>
                                             <p className={classes.event_card_title}>{item.name}</p>
                                             <Row>
                                                 <Col xs={6}>
                                                     <p>Даты проведения: </p>
                                                 </Col>
-                                                <Col>
-                                                    <p>{item.date}</p>
+                                                <Col xs={6}>
+                                                    <p>{item.dateofstart.slice(0,10)} - { item.dateofend.slice(0,10)}</p>
                                                 </Col>
                                                 <Col xs={6}>
                                                     <p>Местоположение:</p>
                                                 </Col>
-                                                <Col>
+                                                <Col xs={6}>
                                                     <p>{item.location}</p>
                                                 </Col>
                                             </Row>
                                             <hr/>
-                                            <p className={classes.event_card_status}>item.status</p>
+                                            <p className={classes.event_card_status}>{item.status}</p>
                                         </div>
                                     </Col>)
                             }
@@ -95,24 +120,28 @@ function Federation({match}) {
 
                     </Row>
                     <p className={classes.about_desc_title}>Рейтинги спортсменов</p>
-                    <Form>
+                    <Form onSubmit={submitForm}>
                         <Form.Row>
                             <Col>
                                 <Form.Group as={Col} controlId="formGridName">
                                     <Form.Label className={classes.rating_label}>Спортсмен</Form.Label>
-                                    <Form.Control placeholder="Поиск по  имени "/>
+                                    <Form.Control placeholder="Поиск по  имени " type="text"
+                                                  value={searchName}
+                                                  onChange={e => setSearchName(e.target.value)}/>
                                 </Form.Group>
                             </Col>
                             <Col>
                                 <Form.Group as={Col} controlId="formGridWeight">
                                     <Form.Label className={classes.rating_label}>Весовая категория</Form.Label>
-                                    <Form.Control placeholder=""/>
+                                    <Form.Control placeholder="" type="text" value={searchWeight}
+                                                  onChange={e => setSearchWeight(e.target.value)}/>
                                 </Form.Group>
                             </Col>
                             <Col>
                                 <Form.Group as={Col} controlId="formGridOrgName">
                                     <Form.Label className={classes.rating_label}>Название организации</Form.Label>
-                                    <Form.Control placeholder=""/>
+                                    <Form.Control placeholder="" type="text" value={searchOrg}
+                                                  onChange={e => setSearchOrg(e.target.value)}/>
                                 </Form.Group>
                             </Col>
                         </Form.Row>
@@ -127,16 +156,24 @@ function Federation({match}) {
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Асанов Айбек Асанович</td>
-                            <td>Кыргызстан</td>
-                        </tr>
+                        {playersData.map((item, count) => {
+                            return (
+                                    <tr>
+                                        <td>{++count}</td>
+                                        <td>{item.name} {item.surname}</td>
+                                        <td>Кыргызстан</td>
+                                    </tr>)
+                        })
+                        }
                         </tbody>
                     </Table>
                     <div className={classes.news_wrapper}>
                         <p className={classes.news_wrapper_title}>Новости</p>
-                        <Button variant="danger" type="submit" className={classes.submit_button}>Смотреть все
+                        <Button variant="danger" type="submit"
+                                onClick={ () => {
+                                    history.push(`/news`)
+                                }}
+                                className={classes.submit_button}>Смотреть все
                             новости</Button>
                     </div>
                     <Row className={classes.news_block_wrapper}>
@@ -156,7 +193,8 @@ function Federation({match}) {
                                 {
                                     newsData.slice(0, 4).map((n) => {
                                         return (
-                                            <Col xs={6}>
+                                            <Col xs={6}
+                                                 onClick={ () => history.push(`/news/${n.id}`)}>
                                                 <div className={classes.news_item}>
                                                     <img src={n.photo} alt={n.tag} className={classes.news_item_img}/>
                                                     <div className={classes.news_item_text_wrapper}>
