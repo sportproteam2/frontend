@@ -24,6 +24,8 @@ function Competition() {
     const history = useHistory()
 
     useEffect(async () => {
+        const categResult = await axios.get("https://sportproteam2.herokuapp.com/api/sportcategory/")
+        setSportCategory(categResult.data);
         if (selectedSport){
             setSelectedCatId( selectedSport.category.id);
             setSelectedCat( selectedSport.category.name);
@@ -32,10 +34,6 @@ function Competition() {
             setEvents(eventData.data);
             const sportNames = await axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + selectedSport.category.id)
             setSportNames(sportNames.data);
-        } else {
-            fetch("https://sportproteam2.herokuapp.com/api/sportcategory/")
-                .then((response) => response.json())
-                .then(res => setSportCategory(res));
         }
     }, [])
 
@@ -62,10 +60,10 @@ function Competition() {
     }
 
     function selectSecondForm(event) {
+        setSelectedSportId(selectedSportId);
         if (event) {
             setSelectedSportId(event.target.value);
         }
-        setSelectedSportId(selectedSportId);
         fetch("https://sportproteam2.herokuapp.com/api/event/?sport=" + event.target.value)
             .then((response) => response.json())
             .then(res => setEvents(res));
@@ -118,7 +116,7 @@ function Competition() {
                                 <p className={classes.card_text_desc}>{e.location}</p>
                                 <p className={classes.card_text_desc}>{e.date}</p>
                                 <hr/>
-                                <p className={classes.card_status}>Завершено</p>
+                                <p className={classes.card_status}>{e.status}</p>
                             </div>
                         </Col>
                     )

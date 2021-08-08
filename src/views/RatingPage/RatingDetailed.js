@@ -54,51 +54,14 @@ function RatingDetailed({match}) {
                 </Row>
             </div>
             <div className={classes.table_wrapper}>
-                <Form
-                    // onSubmit={ event => submitSearch(event)}
-                >
-                    <Form.Row >
-                        <Col xs={2} className={classes.form}>
-                            <Form.Group as={Col} controlId="formGridName">
-                                <Form.Control as="select"
-                                              size="lg">
-                                    <option value='0'>Месяц</option>
-                                     <option value='1'>Январь</option>
-                                     <option value='2'>Февраль</option>
-                                     <option value='3'>Март</option>
-                                     <option value='4'>Апрель</option>
-                                     <option value='5'>Май</option>
-                                     <option value='6'>Июнь</option>
-                                     <option value='7'>Июль</option>
-                                     <option value='8'>Август</option>
-                                     <option value='9'>Сентябрь</option>
-                                     <option value='10'>Октябрь</option>
-                                     <option value='11'>Ноябрь</option>
-                                     <option value='12'>Декабрь</option>
-                                </Form.Control>
-                            </Form.Group>
-                        </Col>
-                        <Col xs={2} className={classes.form}>
-                            <Form.Group as={Col} controlId="formGridName">
-                                <Form.Control as="select"
-                                              size="lg">
-                                    <option value='0'>Год</option>
-                                </Form.Control>
-                            </Form.Group>
-                        </Col>
-                        <Col xs={3} className={classes.form}>
-                            <Button variant="danger" type="submit" className={classes.submit_button}>Поиск</Button>
-                        </Col>
-                    </Form.Row>
-                </Form>
                 <Table bordered hover className={classes.rating_table_wrapper}>
                     <thead>
                     <tr >
                         <th className={classes.table_header}>Меропрятие</th>
                         <th className={classes.table_header}>Дата события</th>
                         <th className={classes.table_header}>Расположение</th>
-                        <th className={classes.table_header}>Место</th>
-                        <th className={classes.table_header}>Рейтинг очков</th>
+                        {/*<th className={classes.table_header}>Место</th>*/}
+                        {/*<th className={classes.table_header}>Рейтинг очков</th>*/}
                     </tr>
                     </thead>
                     <tbody>
@@ -110,8 +73,8 @@ function RatingDetailed({match}) {
                         <th>{e.name}</th>
                         <th>{e.dateofstart}</th>
                         <th>{e.location}</th>
-                        <th>1</th>
-                        <th>457,62</th>
+                        {/*<th>1</th>*/}
+                        {/*<th>{}</th>*/}
                     </tr>
                         )
                     })}

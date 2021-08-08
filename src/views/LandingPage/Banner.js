@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import style from "../../assets/styles/MainStyle";
 import {makeStyles} from "@material-ui/core/styles";
-import {useEffect} from "react";
 import CompetitonsData from "../../assets/data/CompetitonsData";
 
 const mainStyle = makeStyles(style);

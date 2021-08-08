@@ -8,6 +8,7 @@ import {List, ListItem} from '@material-ui/core';
 import logo1 from '../../assets/img/logo_light.png'
 import logo2 from '../../assets/img/logo.png'
 import headerMenuData from "../../assets/data/HeaderMenuData";
+import {useSelector} from "react-redux";
 
 const useStyles = makeStyles(styles);
 
@@ -15,12 +16,13 @@ function Header(){
     const classes = useStyles();
     const [header, setHeader] = useState(classes.appBar);
     const [logo, setLogo] = useState(logo1);
+    let headerMenu = headerMenuData;
     const [listItemAnchor, setListItemAnchor] = useState(classes.listItem_anchor);
+    const selectedSport = useSelector((state) => state.sport);
 
 
     const listenScrollEvent = () => {
         if ((window.scrollY <= 60)  && (window.location.pathname === '/')){
-            console.log("SCROLLY", window.scrollY)
             setListItemAnchor(classes.listItem_anchor);
             setHeader(classes.appBar);
             setLogo(logo1);
@@ -38,7 +40,7 @@ function Header(){
     }, []);
 
 
-    const headerMenuTab = headerMenuData.map( link =>
+    const headerMenuTab = ((selectedSport == null) ? headerMenuData.slice(1) : headerMenuData).map( link =>
         <ListItem key={link.id} className={classes.listItem}>
             <NavLink to={link.path} className={listItemAnchor} activeClassName={classes.listItem_active}>{link.title}</NavLink>
         </ListItem>);

@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 import { useSelector} from "react-redux";
 import {useHistory} from "react-router";
+import axios from "axios";
 
 const aboutUsStyle = makeStyles(style);
 
@@ -23,20 +24,21 @@ function Federation() {
     const aboutData = useSelector((state) => state.sport);
 
 
-    useEffect(() => {
-        fetch("https://sportproteam2.herokuapp.com/api/gallery/")
-            .then((response) => response.json())
-            .then(res => setGalleryData(res))
-        fetch("https://sportproteam2.herokuapp.com/api/federation/?sport=" + aboutData.id)
-            .then((response) => response.json())
-            .then(res => setFedData(res[0]))
-        fetch("https://sportproteam2.herokuapp.com/api/event/?federation=" + fedData.id)
+    useEffect(async() => {
+
+        const fedData = await axios.get("https://sportproteam2.herokuapp.com/api/federation/?sport=" + aboutData.id);
+        setFedData(fedData.data[0]);
+        const galleryData = await axios.get("https://sportproteam2.herokuapp.com/api/gallery/?federation=" + fedData.data[0].id)
+        if (galleryData.data[0] != null)
+        setGalleryData(galleryData.data[0].photo);
+
+        fetch("https://sportproteam2.herokuapp.com/api/event/?federation=" + ((fedData.data[0].id) && 0 ))
             .then((response) => response.json())
             .then(res => setEventData(res))
-        fetch("https://sportproteam2.herokuapp.com/api/news/?federation="  + fedData.id)
+        fetch("https://sportproteam2.herokuapp.com/api/news/?federation="  + ((fedData.data[0].id) && 0 ))
             .then((response) => response.json())
             .then(res => setNewsData(res.results))
-        fetch("https://sportproteam2.herokuapp.com/api/players/?federation=" + fedData.id)
+        fetch("https://sportproteam2.herokuapp.com/api/players/?federation=" + ((fedData.data[0].id) && 0 ))
             .then((response) => response.json())
             .then(res => setPlayersData(res))
 
@@ -59,18 +61,6 @@ function Federation() {
             .then(res => setPlayersData(res))
     }
 
-
-    const galleryItem = galleryData.map(g => {
-        return (
-            <Col xs={12} className={classes.gallery_photo_wrapper}>
-                <img src={g.photo[0].photo} alt={g.id} className={classes.gallery_img}/>
-                <div className={classes.card_text_wrapper}>
-                    <p className={classes.card_tag}>{g.federation.name}</p>
-                    <p className={classes.card_main_text}>{g.tags}</p>
-                    <p className={classes.card_date}>{g.photo[0].dateofadd.slice(0,10)}</p>
-                </div>
-            </Col>)
-    })
     return (
         <div>
             <div className={classes.about_photo_section}>
@@ -86,7 +76,7 @@ function Federation() {
                     {aboutData.description}
                     <p className={classes.about_desc_title}>{fedData.name} Кыргызской Республики</p>
                     <p>{fedData.description}</p>
-                    <a href={"mailto:" + fedData.contacts}>e-mail: {fedData.contacts}</a>
+                    <a href={"mailto:" + fedData.contacts}>контакты: {fedData.contacts}</a>
                     <p className={classes.about_desc_title}>Программа соревнований</p>
                 </Col>
                 <Col xs={12} className={classes.ratings}>
@@ -153,6 +143,7 @@ function Federation() {
                             <th className={classes.table_header}>Ранг</th>
                             <th className={classes.table_header}>ФИО</th>
                             <th className={classes.table_header}>Страна</th>
+                            <th className={classes.table_header}>Баллы</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -164,6 +155,7 @@ function Federation() {
                                         <td>{++count}</td>
                                         <td>{item.name} {item.surname}</td>
                                         <td>Кыргызстан</td>
+                                        <td>{item.score} </td>
                                     </tr>)
                         })
                         }
@@ -184,7 +176,7 @@ function Federation() {
                                  style={{backgroundImage: `url(https://docs.google.com/uc?id=1SOBj1RIWZFrGcsO6UknPXlXtyOfT_s48)`}}
                             >
                                 <div className={classes.news_main_card_text_wrapper}>
-                                    <p className={classes.news_main_card_text}>newsData[0].title}</p>
+                                    <p className={classes.news_main_card_text}>Сборная Кыргызстана по дзюдо примет участие в чемпионате мира</p>
                                     <p>Подробнее</p>
                                     <hr className={classes.hr}/>
                                 </div>
@@ -202,7 +194,7 @@ function Federation() {
                                                     <div className={classes.news_item_text_wrapper}>
                                                         <p className={classes.news_item_text_date}>{n.dateofadd.slice(0, 10)}
                                                             <span
-                                                                className={classes.news_item_text_tag}>{n.sport.name}</span>
+                                                                className={classes.news_item_text_tag}>{aboutData.name}</span>
                                                         </p>
                                                         <p className={classes.news_item_text_title}>{n.title}</p>
                                                         <p className={classes.news_item_text_additional}>Подробнее</p>
@@ -219,11 +211,32 @@ function Federation() {
                 <Col xs={12} className={classes.gallery_wrapper}>
                     <div className={classes.gallery_top}>
                         <p className={classes.news_wrapper_title}>Галерея</p>
-                        <Button variant="danger" type="submit" className={classes.submit_button}>Смотреть все
-                            новости</Button>
+                        {/*<Button variant="danger" type="submit" className={classes.submit_button}>Смотреть все*/}
+                        {/*    новости</Button>*/}
                     </div>
                     <Row>
-                        {galleryItem}
+                        {galleryData[0] &&
+                        <Col xs={12} className={classes.gallery_photo_wrapper}>
+                            <img src={galleryData[0].photo} alt={galleryData[0].id} className={classes.gallery_img}/>
+                            <div className={classes.card_text_wrapper}>
+                                <p className={classes.card_tag}>{galleryData[0].tags}</p>
+                                <p className={classes.card_main_text}>{galleryData[0].category}</p>
+                                <p className={classes.card_date}>{galleryData[0].dateofadd.slice(0, 10)}</p>
+                            </div>
+                        </Col>
+                        }
+                        {galleryData.slice(1,4).map(g => {
+                        return (
+                        <Col xs={4} className={classes.small_gallery_photo_wrapper}>
+                        <img src={g.photo} alt={g.id} className={classes.small_gallery_img}/>
+                        <div className={classes.small_card_text_wrapper}>
+                        <p className={classes.small_card_tag}>{g.category}</p>
+                        <p className={classes.small_card_main_text}>{g.tags}</p>
+                        <p className={classes.card_date}>{g.dateofadd.slice(0,10)}</p>
+                        </div>
+                        </Col>
+                        )
+                    })}
                     </Row>
                 </Col>
 

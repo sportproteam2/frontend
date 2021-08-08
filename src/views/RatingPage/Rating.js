@@ -4,10 +4,9 @@ import {makeStyles} from "@material-ui/core/styles";
 import {Col, Row} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import federationsData from "../../assets/data/FederationsData";
-import categoryData from "../../assets/data/SportsCategoryData";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
-import { Redirect } from 'react-router';
+import {useHistory} from 'react-router';
 import {useSelector} from "react-redux";
 import axios from "axios";
 
@@ -15,8 +14,9 @@ const aboutUsStyle = makeStyles(style);
 
 function Rating() {
     const classes = aboutUsStyle();
+    const history = useHistory();
     const [sportNames, setSportNames] = useState(federationsData);
-    const [category, setCategory] = useState(categoryData);
+    const [category, setCategory] = useState([]);
     const [selectedCatId, setSelectedCatId] = useState(0);
     const [selectedSportId, setSelectedSportId] = useState(0);
     const [selectedCat, setSelectedCat] = useState();
@@ -29,15 +29,26 @@ function Rating() {
     const selectedSport = useSelector((state) => state.sport);
 
     useEffect(async () => {
+        const categResult = await axios.get("https://sportproteam2.herokuapp.com/api/sportcategory/")
+        setCategory(categResult.data);
         if (selectedSport){
             setSelectedCatId( selectedSport.category.id);
             setSelectedCat( selectedSport.category.name);
             setSelectedSportId( selectedSport.id);
+        }
+
+        if (selectedSportId){
+            console.log('selectedSportID', selectedSportId)
             const playersResult = await axios.get("https://sportproteam2.herokuapp.com/api/players/?sport=" + selectedSportId)
             setPlayers(playersResult.data);
+        }
+
+        if (selectedCatId){
             const sportNames = await axios.get("https://sportproteam2.herokuapp.com/api/sport/?category=" + selectedCatId)
             setSportNames(sportNames.data);
         }
+
+
     })
 
     function selectFirstForm(event) {
@@ -52,9 +63,6 @@ function Rating() {
 
         if (sportNames.length >= 1) {
             setSelectedSportId(1);
-            fetch("https://sportproteam2.herokuapp.com/api/players/?sport=1")
-                .then((response) => response.json())
-                .then(res => setPlayers(res));
         }
     }
 
@@ -62,19 +70,14 @@ function Rating() {
         if (event) {
             setSelectedSportId(event.target.value);
         }
-
-        fetch("https://sportproteam2.herokuapp.com/api/players/?sport=" + selectedSportId)
-            .then((response) => response.json())
-            .then(res => setPlayers(res));
     }
 
-    function handleOnClick(id) {
-            return <Redirect push to={'/rating/' + id}/>
-    }
 
     const tableData = players.map((p, i) => {
         return (
-            <tr key={i} onClick={handleOnClick(p.id)}>
+            <tr key={i} onClick={ () => {
+                history.push(`/rating/${p.id}`)
+            }}>
                 <td>{++i}</td>
                 <td>{p.name + " " + p.surname}</td>
                 <td>Кыргызстан</td>
@@ -82,21 +85,24 @@ function Rating() {
             )
     })
 
-    const submitForm = (event) => {
-        event.preventDefault();
-        let url = "https://sportproteam2.herokuapp.com/api/players/?sport=" + selectedSport.id;
-        if (searchWeight !=null){
-            url += "&weight=" + searchWeight;
+    function submitForm(event) {
+        if (event){
+            event.preventDefault()
+            let url = "https://sportproteam2.herokuapp.com/api/players/?sport=" + selectedSport.id;
+            if (searchWeight !=null){
+                url += "&weight=" + searchWeight;
+            }
+            if ( searchName != null){
+                url += "&name=" + searchName;
+            }
+            if (searchOrg != null){
+                url += "&organization=" + searchOrg;
+            }
+            fetch(url)
+                .then((response) => response.json())
+                .then(res => setPlayers(res))
         }
-        if ( searchName != null){
-            url += "&name=" + searchName;
-        }
-        if (searchOrg != null){
-            url += "&organization=" + searchOrg;
-        }
-        fetch(url)
-            .then((response) => response.json())
-            .then(res => setPlayers(res))
+
     }
 
     return (
@@ -155,7 +161,7 @@ function Rating() {
                         :
                         <Col xs={12}>
                             <p className={classes.about_desc_title}>Рейтинги спортсменов</p>
-                            <Form onSubmit={submitForm}>
+                            <Form onSubmit={submitForm()}>
                                 <Form.Row>
                                     <Col>
                                         <Form.Group as={Col} controlId="formGridName">

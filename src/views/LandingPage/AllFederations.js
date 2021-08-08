@@ -5,7 +5,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import axios from "axios";
 
 import SportCategoryData from "../../assets/data/SportsCategoryData";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {changeSport} from "../../store/actions";
 import {useHistory} from "react-router";
 
@@ -32,6 +32,7 @@ function AllFederations() {
         }
         setSportsData(data);
     }, [])
+
     return (
         <Container className={classes.all_sports_wrapper}>
             <p className={classes.all_sports_general_title}>Виды спорта</p>
@@ -39,7 +40,7 @@ function AllFederations() {
                 {
                     sportsData.map((item) => {
                         return (
-                            <div>{ (item[1].sports.length>0) &&
+                            <div key={item.id}>{ (item[1].sports.length>0) &&
                                 <p className={classes.all_sports_title}>{item[0].categ}</p>}
                                 <Row className={classes.all_sports_card_wrapper}>
                                     {item[1].sports.map((subitem) => {

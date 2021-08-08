@@ -54,8 +54,6 @@ const RatingStyle = {
         marginRight: '0'
     },
     rating_table_wrapper: {
-        marginTop: '5%',
-        marginLeft: '1%'
     },
     table_header: {
         borderTopStyle: 'hidden !important',

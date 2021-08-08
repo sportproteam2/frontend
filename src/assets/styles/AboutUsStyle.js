@@ -1,4 +1,4 @@
-import aboutUs from "../img/aboutUs.png"
+import aboutUs from "../img/дзюдо.jpeg"
 
 const aboutUsStyle = {
     about_photo_section: {
@@ -67,7 +67,7 @@ const aboutUsStyle = {
         borderRadius: '0'
     },
     news_main_card_wrapper: {
-        height: "350px",
+        height: "400px",
         width: "auto",
         color: "white !important"
     },
@@ -75,7 +75,7 @@ const aboutUsStyle = {
         fontSize: '24px',
         fontWeight: '600',
         lineHeight: '35px',
-        paddingRight: '10px'
+        paddingRight: '20px'
     },
     hr: {
         marginLeft: '7%',
@@ -160,18 +160,42 @@ const aboutUsStyle = {
     gallery_photo_wrapper: {
         display: 'flex',
         flexDirection: 'column',
+        paddingLeft: '10%',
+        paddingRight: '10%',
+    },
+    small_gallery_photo_wrapper: {
+        display: 'flex',
+        flexDirection: 'column',
         paddingLeft: '5%',
         paddingRight: '5%',
+        paddingBottom: '5%',
     },
     gallery_img: {
         height: '500px',
+    },
+    small_gallery_img: {
+        height: '150px',
     },
     card_text_wrapper: {
         textAlign: 'left',
         paddingTop: '3%',
         paddingBottom: '3%',
     },
+    small_card_text_wrapper: {
+        textAlign: 'left',
+        paddingTop: '1%',
+        paddingBottom: '1%',
+    },
     card_tag: {
+        fontSize: '18px',
+        fontStyle: 'normal',
+        fontWeight: '600',
+        lineHeight: '21px',
+        textAlign: 'left',
+        fontFamily: 'Lato !important, sans-serif',
+        color: '#ED2840'
+    },
+    small_card_tag: {
         fontSize: '18px',
         fontStyle: 'normal',
         fontWeight: '600',
@@ -185,6 +209,14 @@ const aboutUsStyle = {
         fontStyle: 'normal',
         fontWeight: '700',
         lineHeight: '38px',
+        textAlign: 'left',
+        color: 'white'
+    },
+    small_card_main_text: {
+        fontSize: '18px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        lineHeight: '26px',
         textAlign: 'left',
         color: 'white'
     },
@@ -206,7 +238,7 @@ const aboutUsStyle = {
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.04)'
     },
     news_item_img: {
-        height: '130px',
+        height: '170px',
         maxWidth: '50%',
     },
     news_item_text_wrapper: {

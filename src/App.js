@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from "react";
+import React, {Fragment} from "react";
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
 import Rating from "./views/RatingPage/Rating"

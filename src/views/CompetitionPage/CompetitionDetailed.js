@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import style from "../../assets/styles/CompetitionStyles";
 import {makeStyles} from "@material-ui/core/styles";
 import {Col, Row} from 'react-bootstrap';
-import eventData from "../../assets/data/EventData";
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import Table from 'react-bootstrap/Table'
@@ -15,14 +14,12 @@ function CompetitionDetailed({match}) {
     const [events, setEvents] = useState([]);
     const [playerCateg, setPlayerCateg] = useState([]);
     useEffect(async() => {
-        console.log('match.params.id', match.params.id)
         const eventData = await axios.get("https://sportproteam2.herokuapp.com/api/event/" + match.params.id)
         setEvents(eventData.data);
         const categData = await axios.get("https://sportproteam2.herokuapp.com/api/playercategory")
-        console.log('categData.data', categData.data);
-        let array = [];
-        array.push(categData.data);
-        console.log('playercateeeeg', playerCateg.length);
+        // let array = [];
+        // array.push(categData.data);
+        // setPlayerCateg(array)
     }, [])
 
     const malePlayerCount =  async (id) => {
@@ -36,9 +33,9 @@ function CompetitionDetailed({match}) {
     return (
         <div className={classes.contact_wrapper}>
             <p className={classes.contact_title}>{events.name}</p>
-            <p className={classes.date_desc}>{events.dateofstart + " - " + events.dateofend}</p>
+            <p className={classes.date_desc}>{(events.dateofstart) && events.dateofstart.slice(0,10) + " - " + events.dateofend.slice(0,10)}</p>
 
-            <Tabs defaultActiveKey="profile">
+            <Tabs defaultActiveKey="regalement" className={classes.tab}>
                 <Tab eventKey="regalement" title="Регламент">
                     <Row>
                         <Col xs={6}>
@@ -52,16 +49,18 @@ function CompetitionDetailed({match}) {
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {/*{playerCateg.map( (c) => {*/}
-                                {/*    return (*/}
-                                {/*        <tr>*/}
-                                {/*            <td>{c.name}</td>*/}
-                                {/*            <td>{malePlayerCount(c.id)}</td>*/}
-                                {/*            <td>{femalePlayerCount(c.id)}</td>*/}
-                                {/*            <td>{malePlayerCount(c.id) + femalePlayerCount(c.id)}</td>*/}
-                                {/*        </tr>*/}
-                                {/*    )*/}
-                                {/*})}*/}
+                                        <tr>
+                                            <td>Кадеты</td>
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Взрослые</td>
+                                            <td>10</td>
+                                            <td>2</td>
+                                            <td>12</td>
+                                        </tr>
                                 </tbody>
                             </Table>
                         </Col>
@@ -279,8 +278,6 @@ function CompetitionDetailed({match}) {
                         </Col>
 
                     </Row>
-                </Tab>
-                <Tab eventKey="setka" title="Сетки">
                 </Tab>
                 <Tab eventKey="result" title="Результаты">
                     <Row>

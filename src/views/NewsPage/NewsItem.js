@@ -1,5 +1,4 @@
 import React from "react";
-import NewsData from "../../assets/data/NewsData";
 import {Col, Row} from 'react-bootstrap';
 import style from "../../assets/styles/NewsStyle";
 import {Link} from "react-router-dom";

@@ -102,10 +102,9 @@ const mainStyle = {
     },
     about_text: {
         paddingTop: '20px',
-        fontSize: '24px',
-        fontWeight: '500',
+        fontSize: '30px',
+        fontWeight: '400',
         lineHeight: '41px',
-        fontFamily: 'Lato !important',
         fontStyle: 'normal'
     },
     all_sports_wrapper: {

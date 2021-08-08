@@ -141,6 +141,10 @@ boxSizing: 'border-box'
         marginTop: '5%',
         marginBottom: '5%'
     },
+    tab: {
+        marginTop: '5%',
+        color: '#ED2840 !important',
+    },
     event_info: {
         padding: '5%',
         backgroundColor: 'rgba(229, 229, 229, 0.29)',
